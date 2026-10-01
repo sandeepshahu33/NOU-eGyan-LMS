@@ -1,0 +1,39 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block admin %}
+<div class="container">
+    <div class="row bg-primary text-light p-3" style="border-radius: 20px">
+        <div class="col-sm-12">
+            <h3 class="text-light mb-0">All Students Data</h3>
+
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-sm-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Roll No.</th>
+                    <th>Name</th>
+                    <th>Father's name</th>
+                    <th>Mother's name</th>
+                    <th>View More</th>
+                    
+                </tr>
+                {% for stu in students %}
+                <tr>
+                    <td>{{stu.rollno}}</td>
+                    <td>{{stu.name}}</td>
+                    <td>{{stu.fname}}</td>
+                    <td>{{stu.mname}}</td>
+                    <td>
+                        <a href="{% url 'viewmore' rollno=stu.rollno %}">
+                            <button type="button" class="btn btn-sm btn-success "> View More</button>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

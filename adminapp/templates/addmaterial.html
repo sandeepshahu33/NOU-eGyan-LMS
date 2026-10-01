@@ -1,0 +1,88 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block admin %}
+<div class="container">
+    <div class="row bg-primary text-light p-3" style="border-radius: 20px">
+        <div class="col-sm-12">
+            <h3 class="text-light mb-0 text-center pt-2">Add Study Material</h3>
+            <p></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <form class="form-group" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table class="table table-border" style="width: 60%; margin: auto;">
+                    <tr>
+                        <td>Select Program</td>
+                        <td>
+                            <select name="program" id="" class="form-select">
+                                <option value="">---Select Any Course---</option>
+                                <option value="btech">B.Tech.</option>
+                                <option value="mtech">M.Tech.</option>
+                                <option value="bca">BCA</option>
+                                <option value="mca">MCA</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Select Branch</td>
+                        <td>
+                            <select name="branch" id="" class="form-select">
+                                <option value="">---Select Any branch---</option>
+                                <option value="cs">Computer Science</option>
+                                <option value="it">Information Technology</option>
+                                <option value="ca">Computer Application</option>
+                                <option value="ce">Civil Engineering</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Select Persuing Year</td>
+                        <td>
+                            <select name="year" id="" class="form-select">
+                                <option value="">---Select any year---</option>
+                                <option value="first">First Year</option>
+                                <option value="second">Second Year</option>
+                                <option value="third">Third Year</option>
+                                <option value="final">Final Year</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enter Subject</td>
+                        <td><input type="text" name="subject" class="form-control" required></td>
+                    </tr>
+                    <tr>
+                        <td>Select Material Type</td>
+                        <td>
+                            <select name="materialtype" id="" class="form-select">
+                                <option value="">---select material---</option>
+                                <option value="smat">Study Material</option>
+                                <option value="assign">Assignment</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enter File Name</td>
+                        <td><input type="text" name="filename" class="form-control" required></td>
+                    </tr>
+                    <tr>
+                        <td>Upload File</td>
+                        <td>
+                            <input type="file" name="myfile" class="form-control" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="submit" class="btn btn-success">Add Material</button>
+                        </td>
+                    </tr>
+                </table>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

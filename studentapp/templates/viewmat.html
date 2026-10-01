@@ -1,0 +1,34 @@
+{% extends 'studentbase.html' %}
+{% load static %}
+{% block student %}
+<div class="container">
+    <div class="row bg-primary text-light p-3" style="border-radius: 20px">
+        <div class="col-sm-12">
+            <h3 class="text-light mb-0">View Study Material</h3>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-sm-12">
+            <table class="table table-bordered" style="margin: auto;width: 80%;">
+                <tr>
+                    <th>Sr. No</th>
+                    <th>Subject</th>
+                    <th>Material Type</th>
+                    <th>Topic</th>
+                </tr>
+
+                {% for m in smat %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{m.subject}}</td>
+                    <td>{{m.materialtype}}</td>
+                    <td>
+                        <a download href="{{m.myfile.url}}">{{m.filename}}</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

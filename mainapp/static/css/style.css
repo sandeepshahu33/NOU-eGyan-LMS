@@ -1,0 +1,358 @@
+.bg-maroon {
+    background-color: #8B0000;
+}
+
+.border-bt {
+    border-bottom: 2px dotted #FFA500;
+}
+
+.text-maroon {
+    color: #8B0000;
+}
+
+.social-icon {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notice {
+    background-color: #BE4A00;
+}
+
+.bg-img1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(255, 255, 255, 0.15)), url("../images/download.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 330px;
+}
+
+iframe {
+    margin-top: 50px;
+    height: 220px;
+    width: 350px;
+    margin-left: -80px;
+}
+
+.bg-img2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(255, 255, 255, 0.15)), url("../images/bg1.jpg");
+    min-height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.card-outer {
+    padding: 10px;
+    border: 2px solid rgb(158, 157, 157);
+    width: 19.5rem;
+    border-radius: 10px;
+    background-color: transparent;
+    box-shadow:
+        -5px -5px 12px rgba(255, 255, 255, 0.8),
+        5px 5px 12px rgba(0, 0, 0, 0.2);
+
+}
+
+.card {
+    transition: all 0.5s ease;
+}
+
+.card-outer:hover .card {
+    transform: translateY(-35px);
+
+}
+
+.card-outer:hover .card-icon {
+    background-color: white;
+    color: #8B0000;
+    border: 2px solid orange;
+}
+
+.portal-btn {
+    color: #8B0000;
+    padding: 10px 15px;
+    background-color: orange;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all .3s ease;
+}
+
+.portal-btn:hover {
+    color: white;
+}
+
+.card-icon {
+    height: 60px;
+    width: 60px;
+    border: 2px solid #8B0000;
+    border-radius: 50%;
+    color: white;
+    background-color: #8B0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-top: -30px;
+    margin-left: 100px;
+    transition: all 0.5s ease;
+}
+
+.service {
+    border: 1px solid rgb(198, 196, 196);
+}
+
+.ser-btn {
+    width: 100%;
+    padding: 5px;
+    background-color: #8B0000;
+    color: white;
+    border: none;
+}
+
+.bg-color {
+    background-color: #CCCCCC;
+    min-height: 400px;
+    width: 100%;
+}
+
+.admin {
+    min-height: 200px;
+    width: 220px;
+    background-color: white;
+    padding-top: 20px;
+    /* 👈 ye add karo */
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.admin-img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: 0px auto;
+    border: 4px double red;
+}
+
+.admin-img img {
+    border-radius: 50%;
+    object-fit: cover;
+    /* margin-top: 10px; */
+}
+
+.all-courses {
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #FFA500;
+    color: white;
+}
+
+.sp-outer {
+    padding: 20px;
+    border: 1px solid rgb(233, 228, 228);
+    box-shadow: 0px 0px 20px rgb(209, 202, 202);
+    border-radius: 5px;
+}
+
+.star {
+    color: #FFA500;
+    font-size: 20px;
+}
+
+.bg-img3 {
+    background-image: url("../images/bg2.jpg");
+    min-height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.v-tutorial {
+    /* height: 300px; */
+    border: 10px double maroon;
+    box-shadow: 5px 5px 20px white;
+}
+
+.tutorial-text {
+    margin-left: -80px;
+    height: 40px;
+    width: 350px;
+    background: linear-gradient(to right, #900801, orange);
+    transition: 0.3s;
+}
+
+.tutorial-text a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+.tutorial-text:hover{
+    background: white;
+}
+.tutorial-text:hover a{
+    color: orange;
+}
+.hlp-desk1{
+    height: 100px;
+    padding: 10px;
+    background-color: #EF6603;
+   
+}
+.hlp-desk1 a{
+ color: white;
+ text-decoration: none;
+ font-size: 14px;
+}
+.hlp-desk2{
+    height: 70px;
+    padding: 10px;
+    border: 1px solid rgb(202, 199, 199);
+}
+.hlp-desk2 a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+    padding-left: 10px;
+}
+.icon-color{
+    color: #ec7023;
+    font-size: 25px;
+}
+
+.bg-quick{
+    background-color: #CCCCCC;
+}
+.quick-outer{
+    border: 1px dotted ;
+    background-color: white;
+}
+.footer-logo{
+    display: flex;
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:5px solid  #FFA500;
+}
+
+.footer-icon {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+}
+.footer-icon i{
+    color: white;
+    font-size: 20px;
+}
+.footer-link{
+    transition: .3s;
+}
+.footer-link>a {
+    color: white;
+    text-decoration: none;
+}
+.footer-link:hover{
+    transform: translateX(10px);
+    
+}
+.footer-link:hover>a{
+    color: #FFA500;
+
+}
+.bg-copy{
+    background-color:#660000;
+}
+
+/* Contact us page start  */
+.contact-bg-img1{
+    background-image: linear-gradient(rgba(168, 60, 60, 0.45), rgba(239, 9, 9, 0.15)), url("../images/contact1.jpg");
+    min-height: 250px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.contact-bg-img2{
+    background-image: linear-gradient(rgba(240, 14, 14, 0.45), rgba(238, 23, 23, 0.15)), url("../images/contact2.jpg");
+    min-height: 300px;
+    max-width: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.text-orange{
+    color: #FFA500;
+}
+.cont-location{
+    height: 120px;
+    width: 120px;
+    background:linear-gradient(rgb(214, 211, 211),rgb(87, 81, 81));
+}
+.cont-location{
+    font-size: 40px;
+    color: #FFA500;
+}
+/* Contact us page end  */
+
+/* Course page start */
+.course-btn{
+    padding: 3px 25px;
+    background-color: white;
+    border: none;
+    transition: 0.2s ease-in;
+}
+.course-btn:hover{
+    background-color: orange;
+    color: white;
+}
+.course-img-outer{
+    height: 320px;
+    width: 300px;
+    border: 1px solid rgb(213, 208, 208);
+    padding: 10px;
+    border-radius: 10px;
+    transition: all .2s ;
+}
+.course-img-outer:hover{
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 20px rgb(205, 184, 184);
+}
+
+/* Course page end */
+/* Services section start */
+.services-outer{
+    height: 230px;
+    width: 500px;
+    border: 1px solid rgb(213, 208, 208);
+    padding: 10px;
+    border-radius: 10px;
+    transition: all .2s ;
+}
+
+.services-outer:hover{
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 20px rgb(205, 184, 184);
+}
+/* Services section end */

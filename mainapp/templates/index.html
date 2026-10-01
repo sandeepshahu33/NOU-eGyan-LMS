@@ -1,0 +1,586 @@
+{% extends 'base1.html' %}
+{% load static %}
+
+{% block main %}
+    
+<div class="container-fluid">
+          <!-- slider Start -->
+        <div class="row">
+            <div class="col-sm-12 p-0">
+
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+
+
+                        <div class="carousel-item active">
+                            <img src="{% static 'images/Nousl1.jpg' %}" height="350" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="{% static 'images/slider3.jpg' %}" height="350" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'images/slider2.jpg' %}" height="350" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'images/slider1.jpg' %}" height="350" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- slider end -->
+        <!-- Notice section start  -->
+        <div class="row bg-warning py-2 mt-2">
+            <div class="col-sm-12">
+                <marquee scrollamount="7" onmouseover="stop()" onmouseout="start()">
+                    <span style="display: inline-block; margin-right: 80px;" class="notice px-5 py-1 text-light">
+                        The portal is easy to access & highly user <br>
+                        friendly for the students & study centres.
+                    </span>
+
+                    <span style="display: inline-block; margin-right: 80px;" class="notice px-5 py-1 text-light">
+                        Portal is fully secured and accessible <br>
+                        24 x 7 to its authorised users.
+                    </span>
+
+                    <span style="display: inline-block; margin-right: 80px;" class="notice px-5 py-1 text-light">
+                        The portal is easy to access & highly user <br>
+                        friendly for the students & study centres.
+                    </span>
+                </marquee>
+            </div>
+        </div>
+        <!-- Notice section end  -->
+
+        <div class="row mt-5">
+            <div class="col-sm-9 mx-auto">
+                <p class="mb-0 text-uppercase">Description</p>
+                <h3>About <span class="text-maroon">NOU e-Gyan Portal</span></h3>
+            </div>
+        </div>
+
+        <!-- About NOU portal start -->
+        <div class="row mt-5">
+            <div class="col-sm-8 px-5">
+                <p class="px-5">Nalanda Open University welcomes all our students, faculties & study centres to the very
+                    new & innovative online study portal NOU e-Gyan. The portal is a unique initiative unique initiative
+                    by Hon'ble Vice-Chancellor Prof. (Dr.) K C Sinha, which aims at providing online study material to
+                    the students of NOU.
+                </p>
+                <p class="px-5 py-4">
+                    The portal is accessible from any hook and corner of the world if the system allows the permission
+                    to its users. It is also fully secured and accessible 24 x 7 to its authorised users. It will
+                    resolve the academic issues such as E-content Distribution, Delivery, Tracking, Assessment, Progress
+                    Monitoring & Controlling of all stakeholders of the system i.e. students, teachers, study centre
+                    administrators as well as Nalanda Open University Admins when they are at a distance.
+                </p>
+            </div>
+            <div class="col-sm-4 bg-img1">
+                <!-- <img src="{% static 'images/download.jpeg' %}" height="100%" width="100%" alt=""> -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/jVl8uLz8f9w?si=Z4a2ni3sjT1PRPl5"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+        <!-- About NOU portal end -->
+
+
+
+        <!-- Users Portal start -->
+        <div class="row  my-4 p-0">
+            <div class="col-sm-12 bg-img2">
+                <div class="row mt-5">
+                    <div class="col-sm-9 mx-auto">
+                        <p class="mb-0 text-uppercase">Portal</p>
+                        <h3 class="text-uppercase">Users <span class="text-maroon">of the Portal</span></h3>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row justify-content-center gap-5 mt-5">
+
+                        <div class="col-md-3">
+                            <div class="card-outer">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <div class="card-icon">
+                                            <i class="fa-solid fa-lock"></i>
+                                        </div>
+
+                                        <p class="card-text text-center p-2">The university admin can login to monitor
+                                            the portal, provide access to authorised stake holders & upload study
+                                            material.</p>
+                                        <div class="text-center mt-5 mb-3">
+                                            <a href="#" class="card-link portal-btn">University Admin</a>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card-outer">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <div class="card-icon">
+                                            <i class="fa-solid fa-book"></i>
+                                        </div>
+
+                                        <p class="card-text text-center p-2">The study centres authorised personnel can
+                                            login to track students progress, enroll students, schedule assignments &
+                                            generate reports.</p>
+                                        <div class="text-center mt-4 mb-3">
+                                            <a href="#" class="card-link portal-btn">Study centre</a>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card-outer">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <div class="card-icon">
+                                            <i class="fa-solid fa-users"></i>
+                                        </div>
+
+                                        <p class="card-text text-center p-2">The university enrolled students can login
+                                            to view the notification by university, access the e-contents, give
+                                            assignments & track thier progress report.</p>
+                                        <div class="text-center mt-3 mb-3">
+                                            <a href="#" class="card-link portal-btn">NOU Students</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Users Portal end -->
+
+        <div class="row mt-5">
+            <div class="col-sm-9 mx-auto">
+                <p class="mb-0 text-uppercase">Features</p>
+                <h3 class="mb-0 text-uppercase">Student <span class="text-maroon">Services</span></h3>
+            </div>
+        </div>
+
+        <!-- Services section start -->
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-4 g-4 mt-5 justify-content-center">
+
+                <div class="col-sm-3">
+                    <div class="service">
+                        <img src="{% static 'images/ser1.jpg' %}" class="img-fluid" alt="">
+                        <button class="ser-btn">Login</button>
+                    </div>
+
+                </div>
+                <div class="col-sm-3">
+                    <div class="service">
+                        <img src="{% static 'images/ser2.jpg' %}" alt="">
+                        <button class="ser-btn">Login</button>
+                    </div>
+
+                </div>
+                <div class="col-sm-3">
+                    <div class="service">
+                        <img src="{% static 'images/ser3.jpg' %}" alt="">
+                        <button class="ser-btn">Login</button>
+                    </div>
+
+                </div>
+                <div class="col-sm-3">
+                    <div class="service">
+                        <img src="{% static 'images/ser4.jpg' %}" alt="">
+                        <button class="ser-btn">Login</button>
+                    </div>
+
+                </div>
+                <div class="col-sm-3">
+                    <div class="service text-center pt-4">
+                        <img src="{% static 'images/ser5.svg' %}" class="img-fluid w-75" alt="">
+                        <button class="ser-btn mt-4">Login</button>
+                    </div>
+
+                </div>
+                <div class="col-sm-3">
+                    <div class="service">
+                        <img src="{% static 'images/ser6.jpg' %}" alt="">
+                        <button class="ser-btn">Login</button>
+                    </div>
+
+                </div>
+                <div class="col-sm-3">
+                    <div class="service">
+                        <img src="{% static 'images/ser7.jpg' %}" alt="">
+                        <button class="ser-btn">Login</button>
+                    </div>
+
+                </div>
+                <div class="col-sm-3">
+                    <div class="service">
+                        <img src="{% static 'images/ser8.jpg' %}" alt="">
+                        <button class="ser-btn">Login</button>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+        <!-- Services section end -->
+
+        <!-- Administrative setup start -->
+        <div class="row  my-4 p-0">
+            <div class="col-sm-12 bg-color pb-5">
+                <div class="row mt-5">
+                    <div class="col-sm-9 mx-auto">
+                        <p class="mb-0 text-uppercase">Our Mentors</p>
+                        <h3 class="text-uppercase"><b>Administrative <span class="text-maroon">Setup </span></b></h3>
+                    </div>
+                </div>
+                <div class="container ">
+                    <div class="row row-cols-1 row-cols-sm-4 g-4  justify-content-center mt-3">
+
+                        <div class="col-sm-3">
+                            <div class="admin">
+                                <div class="admin-img">
+                                    <img src="{% static 'images/admin1.jpg' %}" class="img-fluid" alt="">
+                                </div>
+                                <p class="text-center text-maroon pt-3 mb-0"><b>Prof. (Dr.) K. C. Sinha</b></p>
+                                <p class="text-center small pb-4">VICE CHANCELLOR</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="admin">
+                                <div class="admin-img">
+                                    <img src="{% static 'images/admin2.jpg' %}" class="img-fluid" alt="">
+                                </div>
+                                <p class="text-center text-maroon pt-3 mb-0"><b>Prof. (Dr.) Sanjoy Kumar</b></p>
+                                <p class="text-center small pb-4">PRO VICE CHANCELLOR</p>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="admin">
+                                <div class="admin-img">
+                                    <img src="{% static 'images/admin3.jpeg' %}" class="img-fluid" alt="">
+                                </div>
+                                <p class="text-center text-maroon pt-3 mb-0"><b>Dr. Md. Habibur Rahman</b></p>
+                                <p class="text-center small pb-4">REGISTRAR</p>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="admin">
+                                <div class="admin-img">
+                                    <img src="{% static 'images/admin4.jpg' %}" class="img-fluid" alt="">
+                                </div>
+                                <p class="text-center text-maroon pt-3 mb-0"><b>Dr. Neelam Kumari</b></p>
+                                <p class="text-center small pb-4">REGISTRAR (Exam)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Administrative setup end -->
+
+        <div class="row mt-5">
+            <div class="col-sm-9 mx-auto">
+                <p class="mb-0 text-uppercase">Courses</p>
+                <h3 class="mb-0 text-uppercase"><b>Our <span class="text-maroon">Courses</span></b></h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-9 mx-auto">
+                <div class="d-flex justify-content-end">
+                    <a href="#" class="all-courses">View All Courses</a>
+                </div>
+            </div>
+        </div>
+        <!-- Courses Section start -->
+
+        <div class="row mt-4">
+            <div class="col-sm-9 mx-auto">
+                <div class="splide" id="splide1" role="group" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide p-4">
+                                <div class="sp-outer">
+                                    <img src="{% static 'images/splider1.png' %}" class="img-fluid" alt="">
+                                    <h5 class="text-center pt-3"><b>Bachelor in Business Administration (BBA)</b></h5>
+                                    <p class="text-center star">★ ★ ★ ★ ★</p>
+                                </div>
+                            </li>
+                            <li class="splide__slide p-4">
+                                <div class="sp-outer">
+                                    <img src="{% static 'images/splider2.png' %}" class="img-fluid" alt="">
+                                    <h5 class="text-center pt-3"><b>Bachelor in Computer Application (BCA)</b></h5>
+                                    <p class="text-center star">★ ★ ★ ★ ★</p>
+                                </div>
+                            </li>
+                            <li class="splide__slide p-4">
+                                <div class="sp-outer">
+                                    <img src="{% static 'images/splider3.png' %}" class="img-fluid" alt="">
+                                    <h5 class="text-center pt-3"><b>Master In Computer Application (M.C.A.)</b></h5>
+                                    <p class="text-center star">★ ★ ★ ★ ★</p>
+                                </div>
+                            </li>
+                            <li class="splide__slide p-4">
+                                <div class="sp-outer">
+                                    <img src="{% static 'images/splider4.png' %}" class="img-fluid" alt="">
+                                    <h5 class="text-center pt-3"><b>PG Diploma in Financial Management (PGDFM)</b></h5>
+                                    <p class="text-center star">★ ★ ★ ★ ★</p>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Courses Section end -->
+
+        <!-- Tutorial video start -->
+        <div class="row bg-img3 mt-5">
+            <div class="col-sm-12">
+                <div class="row mt-3">
+                    <div class="col-sm-9 mx-auto">
+                        <p class="mb-0 text-uppercase text-light">How to use</p>
+                        <h3 class="mb-0 text-uppercase text-light"><b>NOU e-Gyan Portal Tutorial Videos</b></h3>
+                        <p class="text-light mb-0">For any queries regarding the access into the Portal, the users can
+                            watch
+                            the tutorial videos provided or feel free to communicate their issues via the given contact
+                            helpline number or helpline email ID.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-4 ">
+                    <iframe class="v-tutorial mb-3" width="560" height="315"
+                        src="https://www.youtube.com/embed/Sh9VxOBoYbk?si=p_2W5R372LpBtTxU" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe> <br>
+                    <div class="tutorial-text d-flex justify-content-center align-items-center">
+                        <a href="#">How to login at NOU e-Gyan Portal</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                    <iframe class="v-tutorial mb-3" width="560" height="315"
+                        src="https://www.youtube.com/embed/cEaTY8EfdRs?si=UaeI4Ds0TYCKrZmc" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe> <br>
+                    <div class="tutorial-text  d-flex justify-content-center align-items-center">
+                        <a href="#">How to access content at NOU e-Gyan Portal</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Tutorial video end -->
+
+        <div class="row mt-5">
+            <div class="col-sm-9 mx-auto">
+                <p class="mb-0 text-uppercase">Helpdesk</p>
+                <h3 class="mb-0 text-uppercase"><b>Always <span class="text-maroon">here to support you!</span></b></h3>
+            </div>
+        </div>
+
+        <!-- Help Desk start -->
+        <div class="row">
+            <div class="col-sm-6 text-center">
+                <img src="{% static 'images/helpline.svg' %}" class="" height="350" alt="">
+            </div>
+            <div class="col-sm-4 ">
+                <div class="hlp-desk1">
+                    <a href="#">
+                        The help desk provides user assistance to navigate and understand the aspects of the portal.
+                        This also provides a simple interface for maintenance of student information and issues faced.
+                    </a>
+                </div>
+                <div class="hlp-desk2 mt-2 d-flex  align-items-center">
+                    <a href="tel:+919120668185"> <i class="fa-solid fa-phone icon-color"></i> +91 9120668185</a>
+                </div>
+                <div class="hlp-desk2 mt-2">
+                    <a href="mailto:example@gmail.com"> <i class="fa-solid fa-envelope icon-color"></i>
+                        example@gmail.com</a>
+                </div>
+            </div>
+        </div>
+        <!-- Help Desk end -->
+
+        <!-- Quick Links start -->
+        <div class="row mt-5 bg-quick py-5">
+            <div class="col-sm-9 mx-auto">
+                <p class="mb-0 text-uppercase">Links</p>
+                <h3 class="mb-0 text-uppercase"><b>Quick <span class="text-maroon">Links</span></b></h3>
+            </div>
+            <div class="col-sm-9 mx-auto">
+                <div class="splide" id="splide2" role="group" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide p-4">
+                                <div class=" d-flex quick-outer gap-1 p-2">
+                                    <img src="{% static 'images/link1.png' %}" height="100" alt="">
+                                    <div>
+                                        <h5 class="text-center text-maroon"><b>NOU</b></h5>
+                                        <h5 class="text-center">Nalanda Open University</h5>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li class="splide__slide p-4">
+                                <div class=" d-flex quick-outer gap-4 px-1">
+                                    <img src="{% static 'images/link2.png' %}" height="100" alt="">
+                                    <div>
+                                        <h5 class="text-center text-maroon"><b>STD</b></h5>
+                                        <h5 class="text-center">Science & Technology Department</h5>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li class="splide__slide p-4">
+                                <div class=" d-flex quick-outer gap-4 py-2">
+                                    <img src="{% static 'images/link3.png' %}" height="100" alt="">
+                                    <div>
+                                        <h5 class="text-center text-maroon"><b>UGC</b></h5>
+                                        <h5 class="text-center ">University Grants Commission</h5>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Quick Links end -->
+        <div class="row mt-5">
+            <div class="col-sm-9 mx-auto">
+                <p class="mb-0 text-uppercase">Feedback</p>
+                <h3 class="mb-0 text-uppercase"><b>Feedback <span class="text-maroon">From Our Students</span></b></h3>
+            </div>
+        </div>
+        <!-- Student feedback start -->
+        <div class="row mt-5">
+            <div class="col-sm-9 mx-auto">
+                <div class="splide" id="splide3" role="group" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide p-4">
+                                <div class=" d-flex gap-1 p-2">
+                                    <img src="{% static 'images/t1.jpg' %}" height="100" alt="">
+                                    <div class="ps-5">
+                                        <p><b>“This is best and biggest unified platform for instant online learning. We
+                                                can easily access any content of our enrolled course from the portal.
+                                                Thank you NOU e-Gyan!!“</b>
+                                        </p>
+                                        <p>-Rani Verma-</p>
+                                        <p>University Student</p>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li class="splide__slide p-4">
+                                <div class=" d-flex  gap-4 px-1">
+                                    <img src="{% static 'images/t2.jpg' %}" height="100" alt="">
+                                    <div class="ps-5">
+                                        <p><b>“This is best and biggest unified platform for instant online learning. We
+                                                can easily access any content of our enrolled course from the portal.
+                                                Thank you NOU e-Gyan!!“</b>
+                                        </p>
+                                        <p>-Saurabh Tripathi-</p>
+                                        <p>University Student</p>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li class="splide__slide p-4">
+                                <div class=" d-flex  gap-4 py-2">
+                                    <img src="{% static 'images/t3.webp' %}" height="100" alt="">
+                                    <div class="ps-5">
+                                        <p><b>“This is best and biggest unified platform for instant online learning. We
+                                                can easily access any content of our enrolled course from the portal.
+                                                Thank you NOU e-Gyan!!“</b>
+                                        </p>
+                                        <p>-Avanish Sharma-</p>
+                                        <p> University Student</p>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li class="splide__slide p-4">
+                                <div class=" d-flex  gap-4 py-2">
+                                    <img src="{% static 'images/t3.webp' %}" height="100" alt="">
+                                    <div class="ps-5">
+                                        <p><b>“This is best and biggest unified platform for instant online learning. We
+                                                can easily access any content of our enrolled course from the portal.
+                                                Thank you NOU e-Gyan!!“</b>
+                                        </p>
+                                        <p>-Avanish Sharma-</p>
+                                        <p> University Student</p>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li class="splide__slide p-4">
+                                <div class=" d-flex  gap-4 py-2">
+                                    <img src="{% static 'images/t3.webp' %}" height="100" alt="">
+                                    <div class="ps-5">
+                                        <p><b>“This is best and biggest unified platform for instant online learning. We
+                                                can easily access any content of our enrolled course from the portal.
+                                                Thank you NOU e-Gyan!!“</b>
+                                        </p>
+                                        <p>-Avanish Sharma-</p>
+                                        <p> University Student</p>
+                                    </div>
+
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Student feedback end -->
+</div>
+
+{% endblock main %}
+    

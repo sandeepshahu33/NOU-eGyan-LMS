@@ -1,0 +1,76 @@
+{% extends 'adminbase.html' %} 
+{% load static %} 
+{% block admin %}
+<div class="container">
+    <div class="row bg-primary text-light p-3" style="border-radius: 20px">
+        <div class="col-sm-12">
+            <h3 class="text-light mb-0 text-center pt-2">Student Information</h3>
+            <p></p>
+        </div>
+    </div>  
+    <div class="row mt-4">
+        <div class="col-sm-12">
+            <table class="table table-bordered" style="margin: auto;width: 60%;">
+                <tr>
+                    <th>Roll No</th>
+                    <td>{{si.rollno}}</td>
+                   
+                </tr>
+                <tr>
+                    <th>Student Name</th>
+                    <td>{{si.name}}</td>
+                </tr>
+                <tr>
+                    <th>Father's Name</th>
+                    <td>{{si.fname}}</td>
+                </tr>
+                <tr>
+                    <th>Mother's Name</th>
+                    <td>{{si.mname}}</td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td>{{si.gender}}</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>{{si.address}}</td>
+                </tr>
+                <tr>
+                    <th>Program</th>
+                    <td>{{si.program}}</td>
+                </tr>
+                <tr>
+                    <th>Branch</th>
+                    <td>{{si.branch}}</td>
+                </tr>
+                <tr>
+                    <th>Year</th>
+                    <td>{{si.year}}</td>
+                </tr>
+                <tr>
+                    <th>Contact Number</th>
+                    <td>{{si.contactno}}</td>
+                </tr>
+                <tr>
+                    <th>Email Address</th>
+                    <td>{{si.emailaddress}}</td>
+                </tr>
+                <tr>
+                    <th>Registration Date</th>
+                    <td>{{si.regdate}}</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>
+                        <a href="{% url 'studentdata' %}">
+                            <button type="button" class="btn btn-success btn-success"> 🔙 Back</button>
+                        </a>
+                    </td>
+                </tr>
+                
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

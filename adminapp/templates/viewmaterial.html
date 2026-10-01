@@ -1,0 +1,47 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block admin %}
+<div class="container">
+    <div class="row bg-primary text-light p-3" style="border-radius: 20px">
+        <div class="col-sm-12">
+            <h3 class="text-light mb-0 text-center pt-2">View Study Material</h3>
+            <p></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-border">
+                <tr>
+                    <th>ID</th>
+                    <th>Program</th>
+                    <th>Branch</th>
+                    <th>Year</th>
+                    <th>Subject</th>
+                    <th>Material Type</th>
+                    <th>File Name</th>
+                    <th>Delete</th>
+                </tr>
+                {% for m in mat %}
+                <tr>
+                    <td>{{m.mid}}</td>
+                    <td>{{m.program}}</td>
+                    <td>{{m.branch}}</td>
+                    <td>{{m.year}}</td>
+                    <td>{{m.subject}}</td>
+                    <td>{{m.materialtype}}</td>
+                    <td>
+                        <a download href="{{m.myfile.url}}">{{m.filename}}</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'deletemat' mid=m.mid %}">
+                            <button type="button" class="btn btn-danger btn-sm" onclick="return confirm('Are you Sure ?');">Delete</button>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor%}
+
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

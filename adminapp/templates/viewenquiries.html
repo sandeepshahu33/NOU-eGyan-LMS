@@ -1,0 +1,46 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block admin %}
+<div class="container">
+    <div class="row bg-primary text-light p-3" style="border-radius: 20px">
+        <div class="col-sm-12">
+            <h3 class="text-light mb-0">Manage Enquiries</h3>
+
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-sm-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Contact No.</th>
+                    <th>Email Address</th>
+                    <th>Enquiry Text</th>
+                    <th>Posted Date</th>
+                    <th>Delete</th>
+                </tr>
+                {% for e in enq %}
+                <tr>
+                    <td>{{e.id}}</td>
+                    <td>{{e.name}}</td>
+                    <td>{{e.gender}}</td>
+                    <td>{{e.address}}</td>
+                    <td>{{e.contactno}}</td>
+                    <td>{{e.emailaddress}}</td>
+                    <td>{{e.enquirytext}}</td>
+                    <td>{{e.posteddate}}</td>
+                    <td>
+                        <a href="{% url 'deleteenq' id=e.id %}">
+                            <button type="button" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure ? .')">delete</button>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

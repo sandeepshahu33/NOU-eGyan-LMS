@@ -1,0 +1,236 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Gyan LMS</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/splide.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- Top navbar start -->
+        <div class="row bg-maroon text-light p-1 border-bt">
+            <div class="col-sm-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 d-flex text-center">
+                            <i class="fa-solid fa-phone pt-1"></i>
+                            <p>+91 7080102007</p>
+                            <div class="d-flex ps-4 ">
+                                <i class="fa-solid fa-envelope pt-1"></i>
+                                <p>nouegyanhelp@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 d-flex justify-content-end ">
+                            <p>Wed Sep 09 2026 13:26:25 GMT+0530 (India Standard Time)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top navbar end -->
+        <!-- Addmission quiry start -->
+        <div class="row bg-maroon border-bt">
+            <div class="col-sm-12 text-light text-center ">
+                <p class=" p-2">For Admission and Examination related query, Kindly call on University helpline Numbers
+                    9341508580,9341508577,0612-2201013 & 0612-2206916</p>
+            </div>
+        </div>
+        <!-- Addmission quiry end -->
+        <!-- Social Media Start -->
+        <div class="row p-2">
+            <div class="col-sm-6  d-flex justify-content-center">
+                <img src="{% static 'images/logo1.png' %}" height="80px" alt="">
+                <div class="ps-4">
+                    <h3 class="text-maroon">NOU e-Gyan PORTAL</h3>
+                    <p>(A Concept by Nalanda Open University)</p>
+                </div>
+            </div>
+            <div class="col-sm-6 d-flex gap-3 justify-content-center align-items-center">
+
+                <div class="social-icon">
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+                <div class="social-icon">
+                    <i class="fa-brands fa-facebook"></i>
+                </div>
+                <div class="social-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="social-icon">
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+                <div class="social-icon">
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+
+            </div>
+        </div>
+        <!-- Social Media end -->
+        <!-- Main Navbar Start  -->
+        <div class="row bg-secondary py-3">
+            <div class="col-sm-6 p-0 text-center">
+                <h4 class="text-light">WELCOME <span class="text-warning">STUDENTS</span></h4>
+            </div>
+            <div class="col-sm-6">
+                <nav class="navbar navbar-expand-lg bg-secondary">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle active text-light" href="/" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Home
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{% url 'index' %}">Home</a></li>
+                                        <li><a class="dropdown-item" href="#">About Portal</a></li>
+                                        
+                        
+                                    </ul>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link active text-light" aria-current="page" href="#">Courses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active text-light" aria-current="page" href="#">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active text-light" aria-current="page" href="#">Study Center</a>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle active text-light" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Login
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active text-light" aria-current="page" href="#">Contact</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Main Navbar End  -->
+
+        
+        {% block main %}
+            
+        {% endblock main %}
+            
+
+        <!-- Footer start  -->
+        <div class="row mt-5 bg-maroon py-4">
+            <div class="col-sm-9 mx-auto">
+                <div class="row ">
+                    <div class="col-sm-3  d-flex justify-content-center align-items-center flex-column gap-2">
+                        <div class="footer-logo">
+                            <img src="{% static 'images/link1.png' %}" height="80" alt="">
+                        </div>
+                        <p class="text-center text-light">Nalanda Open University is a State Open University duly
+                            established under
+                            the Act of Bihar Government and is also recognized by Distance Education Council, IGNOU,
+                            Maidan Garhi, New Delhi.
+                        </p>
+                        <div class="d-flex gap-2 justify-content-center align-items-center">
+
+                            <div class="footer-icon">
+                                <i class="fa-brands fa-twitter"></i>
+                            </div>
+                            <div class="footer-icon">
+                                <i class="fa-brands fa-facebook"></i>
+                            </div>
+                            <div class="footer-icon">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div class="footer-icon">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </div>
+                            <div class="footer-icon">
+                                <i class="fa-brands fa-youtube"></i>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3 d-flex mt-5 align-items-center flex-column gap-2">
+                        <h4 class="text-light"> Useful Links</h4>
+                        <div class="d-flex justify-content-start align-items-start flex-column gap-2">
+                            <div class="footer-link">
+                                <a href="#"> <i class="fa-solid fa-arrow-right"></i> Home</a>
+                            </div>
+                            <div  class="footer-link">
+                                <a href="#"><i class="fa-solid fa-arrow-right"></i> About Portal</a>
+                            </div>
+                            <div  class="footer-link">
+                                <a href="#"><i class="fa-solid fa-arrow-right"></i> Services</a>
+                            </div>
+                            <div  class="footer-link">
+                                <a href="#"><i class="fa-solid fa-arrow-right"></i> Contact us</a>
+                            </div>
+                            <div  class="footer-link">
+                                <a href="#"> <i class="fa-solid fa-arrow-right"></i> Courses</a>
+                            </div>
+                            <div  class="footer-link">
+                                <a href="#"> <i class="fa-solid fa-arrow-right"></i> Study Centre</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3 d-flex mt-5 align-items-start flex-column gap-2">
+                        <h4 class="text-light"> Contact info</h4>
+                        <h5 class="text-light"><i class="fa-solid fa-location-dot"></i> NOU</h5>
+                        <p class="text-light">2nd/3rd Floor, Biscomaun Bhawan, Gandhi Maidan, Patna 800 001 (BIHAR).</p>
+                        <p class="text-light"><i class="fa-solid fa-phone-volume"></i> +91 7080102007</p>
+                        <p class="text-light">Give us a call</p>
+
+                    </div>
+                     <div class="col-sm-3 d-flex mt-5 align-items-start flex-column gap-2">
+                        <h4 class="text-light"> Subscribe</h4>
+                        
+                        <p class="text-light">Fill the detail below to receive the manual of the NOU e-Gyan Portal</p>
+                        <p class="text-light"><i class="fa-solid fa-phone-volume"></i> +91 7080102007</p>
+                        <p class="text-light">Give us a call</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer end -->
+
+        <!-- Copyright section start -->
+         <div class="row bg-copy">
+            <div class="col-sm-12 ">
+                <p class="text-center text-light mb-0 p-2"> &copy; Copyright 2026 Designed & Developed By | Sandeep Kumar Shahu</p>
+            </div>
+         </div>
+        <!-- Copyright section end -->
+    </div>
+
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/splide.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>

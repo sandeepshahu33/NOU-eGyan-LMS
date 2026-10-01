@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+<h1 class="text-center text-primary"><i>Student Registration Form</i></h1>
+{% if messages %}
+{% for m in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{m}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+<form action="" method="post" class="form-group">
+    {% csrf_token %}
+    <table class="table" style="width: 60%; margin: auto;">
+        <tr>
+            <td>Enter Roll No. </td>
+            <td><input type="number" name="rollno" class="form-control" required></td>
+        </tr>
+        <tr>
+            <td>Enter Student Name </td>
+            <td><input type="text" name="name" class="form-control" required></td>
+        </tr>
+        <tr>
+            <td>Enter Father's Name </td>
+            <td><input type="text" name="fname" class="form-control" required></td>
+        </tr>
+        <tr>
+            <td>Enter Mother's Name</td>
+            <td><input type="text" name="mname" class="form-control" required></td>
+        </tr>
+        <tr>
+            <td>Select Gender</td>
+            <td>
+                <input type="radio" name="gender" value="Male" class="form-chech-input">Male
+                <input type="radio" name="gender" value="Female" class="form-chech-input">Female
+            </td>
+        </tr>
+        <tr>
+            <td>Enter Address</td>
+            <td><textarea name="address" name="address" id="" class="form-control" required></textarea></td>
+        </tr>
+        <tr>
+            <td>Select Program </td>
+            <td>
+                <select name="program" id="" class="form-select">
+                    <option value="">Select Any Course</option>
+                    <option value="btech">B.Tech.</option>
+                    <option value="mtech">M.Tech.</option>
+                    <option value="bca">BCA</option>
+                    <option value="mca">MCA</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Select Branch</td>
+            <td>
+                <select name="branch" id="" class="form-select">
+                    <option value="">Select Any branch</option>
+                    <option value="cs">Computer Science</option>
+                    <option value="it">Information Technology</option>
+                    <option value="ca">Computer Application</option>
+                    <option value="ce">Civil Engineering</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Select Persuing Year</td>
+            <td>
+                <select name="year" id="" class="form-select">
+                    <option value="">Select any year</option>
+                    <option value="first">First Year</option>
+                    <option value="second">Second Year</option>
+                    <option value="third">Third Year</option>
+                    <option value="final">Final Year</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Enter Contact No</td>
+            <td><input type="number" name="contactno" class="form-control" required></td>
+        </tr>
+        <tr>
+            <td>Enter Email Address</td>
+            <td><input type="email" name="emailaddress" class="form-control"></td>
+        </tr>
+        <tr>
+            <td>Enter Password</td>
+            <td><input type="password" name="password" id="" class="form-control" required></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit" class="btn btn-success">Register</button>
+            </td>
+        </tr>
+        
+
+
+    </table>
+
+</form>
+
+{% endblock main %}
