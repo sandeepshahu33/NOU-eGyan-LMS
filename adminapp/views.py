@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.views.decorators.cache import cache_control
 from mainapp.models import Enquiry,StudentInfo,LoginInfo
 from adminapp.models import *
+from studentapp.models import Response
 # Create your views here.
 @cache_control(no_cache=True,must_revalidate=True,no_store=True)
 def adminhome(req):
@@ -136,7 +137,47 @@ def deletemat(req,mid):
     except KeyError:
         messages.success(req,"Please login first!!")
         return redirect('login')
-
+@cache_control(no_cache=True,must_revalidate=True,no_store=True)
+def viewfeedback(req):
+    try:
+        if req.session['adminid']!=None:
+            feed=Response.objects.filter(responsetype='feed')
+            return render(req,"viewfeedback.html",{"feed":feed})
+    except KeyError:
+        messages.success(req,"Please login first!!")
+        return redirect('login')
+    
+@cache_control(no_cache=True,must_revalidate=True,no_store=True)
+def viewcomplaint(req):
+    try:
+        if req.session['adminid']!=None:
+            comp=Response.objects.filter(responsetype='comp')
+            return render(req,"viewcomplaint.html",{"comp":comp})
+    except KeyError:
+        messages.success(req,"Please login first!!")
+        return redirect('login')
+    
+@cache_control(no_cache=True,must_revalidate=True,no_store=True)
+def deletefeedback(req,id):
+    try:
+        if req.session['adminid']!=None:
+            feed=Response.objects.filter(id=id)
+            feed.delete()
+            return redirect('viewfeedback')
+    except KeyError:
+        messages.success(req,"Please login first!!")
+        return redirect('login')
+    
+@cache_control(no_cache=True,must_revalidate=True,no_store=True)
+def deletecomp(req,id):
+    try:
+        if req.session['adminid']!=None:
+            comp=Response.objects.filter(id=id)
+            comp.delete()
+            return redirect('viewcomplaint')
+    except KeyError:
+        messages.success(req,"Please login first!!")
+        return redirect('login')
 
 
 

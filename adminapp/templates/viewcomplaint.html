@@ -1,0 +1,44 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block admin %}
+<div class="container">
+    <div class="row bg-primary text-light p-3" style="border-radius: 20px">
+        <div class="col-sm-12">
+            <h3 class="text-light mb-0">View Complaint</h3>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-sm-11 mx-auto ">
+             <table class="table table-bordered table-striped">
+                <tr>
+                    <th>Sr. No</th>
+                    <th>Name</th>
+                    <th>Program</th>
+                    <th>Branch</th>
+                    <th>Year</th>
+                    <th>Complaint</th>
+                    <th>Date</th>
+                    <th>Delete</th>
+                </tr>
+                {% for item in comp %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{ item.name}}</td>
+                    <td>{{ item.program}}</td>
+                    <td>{{ item.branch}}</td>
+                    <td>{{ item.year}}</td>
+                    <td>{{ item.responsetext}}</td>
+                    <td>{{ item.posteddate}}</td>
+                    <td>
+                        <a href="{% url 'deletecomp' id=item.id %}">
+                            <button type="button" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure!!')">Delete</button>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

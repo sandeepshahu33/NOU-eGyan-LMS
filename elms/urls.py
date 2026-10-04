@@ -43,6 +43,10 @@ urlpatterns = [
     path('changepwd/',changepwd,name="changepwd"),
     path('viewmat/',viewmat,name="viewmat"),
     path('giveresponse/',giveresponse,name="giveresponse"),
+    path('viewfeedback/',viewfeedback,name='viewfeedback'),
+    path('viewcomplaint/',viewcomplaint,name='viewcomplaint'),
+    path('deletefeedback/<id>',deletefeedback,name='deletefeedback'),
+    path('deletecomp/<id>',deletecomp,name='deletecomp'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
