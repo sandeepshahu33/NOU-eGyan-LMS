@@ -98,31 +98,22 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link active text-light" aria-current="page" href="#">Courses</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="{% url 'courses' %}">Courses</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="#">Services</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="{% url 'services' %}">Services</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="#">Study Center</a>
-                                </li>
-
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle active text-light" href="#" role="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        Login
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
+                                    <a class="nav-link active text-light" aria-current="page" href="{% url 'registration1' %}">Registration</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link active text-light" aria-current="page" href="#">Contact</a>
+                                    <a class="nav-link active text-light" aria-current="page" href="{% url 'login1' %}">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active text-light" aria-current="page" href="{% url 'contactus1' %}">Contact</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active text-light" aria-current="page" href="{% url 'enquery' %}">Enquery</a>
                                 </li>
                             </ul>
 
@@ -221,7 +212,9 @@
         <!-- Copyright section start -->
          <div class="row bg-copy">
             <div class="col-sm-12 ">
-                <p class="text-center text-light mb-0 p-2"> &copy; Copyright 2026 Designed & Developed By | Sandeep Kumar Shahu</p>
+                <p class="text-center text-light mb-0 p-2"> &copy; Copyright 2026 Designed & Developed By | 
+                    <a href="https://www.linkedin.com/in/sandeep-kumar-752143304/" target="_blank" class="footer-name">Sandeep Kumar Shahu</a>
+                </p>
             </div>
          </div>
         <!-- Copyright section end -->

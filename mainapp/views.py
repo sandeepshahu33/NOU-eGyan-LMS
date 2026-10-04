@@ -12,8 +12,23 @@ def index(req):
     return render(req,'home.html')
     # return render(req,'index.html')
     # return render(req,'contactus1.html')
-    # return render(req,'courses.html')
-    # return render(req,'services.html')
+'''
+def courses(req):
+    return render(req,"courses.html")
+
+def services(req):
+    return render(req,"services.html")
+
+def contactus1(req):
+    return render(req,"contactus1.html")
+def login1(req):
+    return render(req,"login1.html")
+def registration1(req):
+    return render(req,"registration1.html")
+def enquery(req):
+    return render(req,"enquery.html")
+
+'''
 def contactus(req):
     if req.method == "POST":
         name=req.POST["name"]

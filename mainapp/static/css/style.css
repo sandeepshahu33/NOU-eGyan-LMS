@@ -283,7 +283,13 @@ iframe {
 .bg-copy{
     background-color:#660000;
 }
-
+.footer-name{
+    text-decoration: none;
+    color: white;
+}
+.footer-name:hover{
+    color: orange;
+}
 /* Contact us page start  */
 .contact-bg-img1{
     background-image: linear-gradient(rgba(168, 60, 60, 0.45), rgba(239, 9, 9, 0.15)), url("../images/contact1.jpg");
