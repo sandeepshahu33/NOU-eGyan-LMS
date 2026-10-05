@@ -27,16 +27,16 @@ urlpatterns = [
     path("",index,name='index'),
     # main website url start
     
-    # path('courses/',courses,name='courses'),
-    # path('services/',services,name='services'),
-    # path('contactus/',contactus1,name='contactus1'),
+    path('courses/',courses,name='courses'),
+    path('services/',services,name='services'),
+    path('contactus/',contactus1,name='contactus1'),
     # path('login/',login1,name='login1'),
-    # path('registration/',registration1,name='registration1'),
-    # path('enquery/',enquery,name='enquery'),
+    path('registration/',registration,name='registration'),
+    path('enquiry/',enquiry,name='enquiry'),
     
     # main website url end,
-    path('contact/',contactus,name='contactus'),
-    path('registration/',registration,name='registration'),
+    # path('contact/',contactus,name='contactus'),
+    # path('registration/',registration,name='registration'),
     path('login/',login,name='login'),
     path('adminhome/',adminhome,name='adminhome'),
     path('adminlogout/',adminlogout,name='adminlogout'),

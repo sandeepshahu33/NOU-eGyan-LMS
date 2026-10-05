@@ -9,10 +9,10 @@ from .models import Enquiry,StudentInfo,LoginInfo
 #     return render(req,'index.html')
 
 def index(req):
-    return render(req,'home.html')
-    # return render(req,'index.html')
-    # return render(req,'contactus1.html')
-'''
+    # return render(req,'home.html')
+    return render(req,'index.html')
+    
+
 def courses(req):
     return render(req,"courses.html")
 
@@ -21,15 +21,16 @@ def services(req):
 
 def contactus1(req):
     return render(req,"contactus1.html")
-def login1(req):
-    return render(req,"login1.html")
-def registration1(req):
-    return render(req,"registration1.html")
+# def login1(req):
+#     return render(req,"login1.html")
+# def registration(req):
+#     return render(req,"registration.html")
 def enquery(req):
     return render(req,"enquery.html")
 
-'''
-def contactus(req):
+# contactus=enquery
+
+def enquiry(req):
     if req.method == "POST":
         name=req.POST["name"]
         gender=req.POST["gender"]
@@ -41,8 +42,8 @@ def contactus(req):
         enq=Enquiry(name=name,gender=gender,address=address,contactno=contactno,emailaddress=emailaddress,enquirytext=enquirytext,posteddate=posteddate)
         enq.save()
         messages.success(req,'Your enquiry is submitted successfully')
-        return redirect("contactus")
-    return render(req,'contactus.html')
+        return redirect("enquiry")
+    return render(req,'enquiry.html')
 
 def registration(req):
     if req.method=="POST":
