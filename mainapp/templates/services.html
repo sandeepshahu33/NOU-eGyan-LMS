@@ -1,99 +1,221 @@
+
 {% extends 'base1.html' %}
 {% load static %}
 
-
 {% block main %}
-<div class="container-fluid p-0">
-    <div class="row  ">
-        <div class="col-sm-12 contact-bg-img1">
-            <div class="row pt-4">
-                <div class="col-sm-9 mx-auto">
-                    <h3 class="text-light">Services</h3>
-                    <p class="text-light"> <a href="#" class="text-warning">Home</a> / Services</p>
-                </div>
-            </div>
+
+<!-- Services Hero Section -->
+<section class="services-hero">
+    <div class="services-hero-overlay"></div>
+
+    <div class="container services-hero-content">
+        <span class="services-tag">LEARN • CONNECT • GROW</span>
+
+        <h1>Our <span>Services</span></h1>
+
+        <p>
+            Everything you need to make your learning journey
+            simple, engaging, and successful.
+        </p>
+
+        <div class="services-breadcrumb">
+            <a href="{% url 'index' %}">Home</a>
+            <span>/</span>
+            <span>Services</span>
         </div>
     </div>
-    <div class="row mt-5">
-        <div class="col-sm-9 mx-auto">
-            <p class="mb-0 text-uppercase">Features</p>
-            <h3 class="text-uppercase">Student <span class="text-maroon">Services</span></h3>
+</section>
+
+
+<!-- Services Introduction -->
+<section class="services-intro">
+    <div class="container text-center">
+        <span class="services-subtitle">WHAT WE OFFER</span>
+
+        <h2>
+            Student <span>Services</span>
+        </h2>
+
+        <p>
+            Explore digital learning tools and resources designed
+            to support your education at every step.
+        </p>
+    </div>
+</section>
+
+
+<!-- Services Cards -->
+<section class="services-list-section">
+    <div class="container">
+
+        <div class="services-grid">
+
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="{% static 'images/Service1.png' %}"
+                         alt="Login service">
+                </div>
+
+                <span class="service-number">01</span>
+
+                <h3>Secure Login</h3>
+
+                <p>
+                    Access your learning portal securely with your
+                    username and password. Explore your academic
+                    resources through your personal account.
+                </p>
+
+                <a href="{% url 'login' %}" class="service-link">
+                    Access Portal <span>→</span>
+                </a>
+            </div>
+
+
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="{% static 'images/Service2.png' %}"
+                         alt="Student dashboard">
+                </div>
+
+                <span class="service-number">02</span>
+
+                <h3>Student Dashboard</h3>
+
+                <p>
+                    Find course information, notifications, study
+                    resources, assignments, and other important
+                    academic updates in one place.
+                </p>
+
+                <a href="{% url 'login' %}" class="service-link">
+                    Explore Dashboard <span>→</span>
+                </a>
+            </div>
+
+
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="{% static 'images/Service3.png' %}"
+                         alt="Learning materials">
+                </div>
+
+                <span class="service-number">03</span>
+
+                <h3>Self-Learning Materials</h3>
+
+                <p>
+                    Study at your own pace with digital notes,
+                    videos, documents, external learning links,
+                    and other course-related resources.
+                </p>
+
+                <a href="{% url 'courses' %}" class="service-link">
+                    Explore Courses <span>→</span>
+                </a>
+            </div>
+
+
+            <!-- Service 4 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="{% static 'images/Service4.png' %}"
+                         alt="Digital e-books">
+                </div>
+
+                <span class="service-number">04</span>
+
+                <h3>Digital e-Books</h3>
+
+                <p>
+                    Access digital books, presentations, PDF notes,
+                    and other educational content to support
+                    your studies anytime.
+                </p>
+
+                <a href="{% url 'courses' %}" class="service-link">
+                    Discover Resources <span>→</span>
+                </a>
+            </div>
+
+
+            <!-- Service 5 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="{% static 'images/Service5.png' %}"
+                         alt="Assignments and quizzes">
+                </div>
+
+                <span class="service-number">05</span>
+
+                <h3>Assignments & Quizzes</h3>
+
+                <p>
+                    Practise your knowledge with course-related
+                    assignments and quizzes designed to help you
+                    review concepts and improve understanding.
+                </p>
+
+                <a href="{% url 'login' %}" class="service-link">
+                    Start Learning <span>→</span>
+                </a>
+            </div>
+
+
+            <!-- Service 6 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="{% static 'images/Service6.png' %}"
+                         alt="Learning progress">
+                </div>
+
+                <span class="service-number">06</span>
+
+                <h3>Learning Progress</h3>
+
+                <p>
+                    Keep track of your learning activities and
+                    academic progress wherever progress-tracking
+                    features are available in the portal.
+                </p>
+
+                <a href="{% url 'login' %}" class="service-link">
+                    View Your Progress <span>→</span>
+                </a>
+            </div>
+
         </div>
     </div>
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-5">
-            <div class="services-outer d-flex">
-                <div>
-                    <img src="{% static 'images/Service1.png' %}" height="80" alt="">
-                </div>
-                <div class="ps-4">
-                    <h5 class="text-warning">Login</h5>
-                    <p>Make your way into the portal through the login page where different users are provided with a username and password to gain access to theuniversity’s programs and other learning related materials</p>
-                </div>
+</section>
+
+
+<!-- Call To Action -->
+<section class="services-cta-section">
+    <div class="container">
+        <div class="services-cta">
+
+            <div class="services-cta-content">
+                <span>YOUR FUTURE STARTS HERE</span>
+
+                <h2>
+                    Make Learning a Part of Your Journey
+                </h2>
+
+                <p>
+                    Discover courses and educational resources
+                    that help you move forward.
+                </p>
             </div>
+
+            <a href="{% url 'courses' %}" class="services-cta-btn">
+                Explore Courses <span>→</span>
+            </a>
+
         </div>
-       <div class="col-md-5">
-            <div class="services-outer  d-flex">
-                <div>
-                    <img src="{% static 'images/Service2.png' %}" height="80" alt="">
-                </div>
-                <div class="ps-4">
-                    <h5 class="text-warning">Dashboard</h5>
-                    <p>The AI-based dashboard will serve as an administrative home page to access key Information about Course Details, Assignments, Quizzes/MCQs, Self-Learning Materials, Course Catalogue, Progress Report, Notifications and other useful tabs. There is a provision for Help to guide ad navigate through the portal.</p>
-                </div>
-            </div>
-        </div>
-       
     </div>
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-5">
-            <div class="services-outer d-flex">
-                <div>
-                    <img src="{% static 'images/Service3.png' %}" height="80" alt="">
-                </div>
-                <div class="ps-4">
-                    <h5 class="text-warning">Self-Learning Material</h5>
-                    <p>IThe students enrolled in the university have a wide range of courses available online covering different subjects. These courses include videos, images, word/PDF files,external links, assignments and quizzes for their study material.</p>
-                </div>
-            </div>
-        </div>
-       <div class="col-md-5">
-            <div class="services-outer  d-flex">
-                <div>
-                    <img src="{% static 'images/Service4.png' %}" height="80" alt="">
-                </div>
-                <div class="ps-4">
-                    <h5 class="text-warning">e-Books</h5>
-                    <p>The E-Books will give a digital access to the self- learning material that are course related e-Contents, presentations, PDF or Word file notes, videos and external links and self-assessment materials for the students like assignments and quizzes on a single platform.</p>
-                </div>
-            </div>
-        </div>
-       
-    </div>
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-5">
-            <div class="services-outer d-flex">
-                <div>
-                    <img src="{% static 'images/Service5.png' %}" height="80" alt="">
-                </div>
-                <div class="ps-4">
-                    <h5 class="text-warning">Self-Learning Material</h5>
-                    <p>IThe students enrolled in the university have a wide range of courses available online covering different subjects. These courses include videos, images, word/PDF files,external links, assignments and quizzes for their study material.</p>
-                </div>
-            </div>
-        </div>
-       <div class="col-md-5">
-            <div class="services-outer  d-flex">
-                <div>
-                    <img src="{% static 'images/Service6.png' %}" height="80" alt="">
-                </div>
-                <div class="ps-4">
-                    <h5 class="text-warning">e-Books</h5>
-                    <p>The E-Books will give a digital access to the self- learning material that are course related e-Contents, presentations, PDF or Word file notes, videos and external links and self-assessment materials for the students like assignments and quizzes on a single platform.</p>
-                </div>
-            </div>
-        </div>
-       
-    </div>
-</div>
+</section>
+
 {% endblock main %}

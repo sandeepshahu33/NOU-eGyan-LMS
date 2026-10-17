@@ -10,7 +10,6 @@ class Material(models.Model):
     materialtype=models.CharField(max_length=100)
     filename=models.CharField(max_length=100)
     myfile=models.FileField(upload_to='')
-
-    def __srt__(self):
+    def __str__(self):
         return f"{self.program} {self.branch}"
 

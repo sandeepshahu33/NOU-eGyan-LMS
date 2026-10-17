@@ -24,14 +24,41 @@
                 <tr>
                     <td>{{forloop.counter}}</td>
                     <td>{{ item.name}}</td>
-                    <td>{{ item.program}}</td>
+                    <!-- <td>{{ item.program}}</td> -->
+                     <td>
+                        
+                        {% if item.program == 'btech' %}
+                        B.Tech
+                        {% elif item.program == 'mtech' %}
+                        M.Tech
+                        {% elif item.program == 'bca' %}
+                        BCA
+                        {% elif item.program == 'mca' %}
+                        MCA
+                        {% endif %}
+                            
+                    </td>
                     <td>{{ item.branch}}</td>
-                    <td>{{ item.year}}</td>
+                    <!-- <td>{{ item.year}}</td> -->
+                    <td>
+
+                        {% if item.year == 'first' %}
+                        First Year
+                        {% elif item.year == 'second' %}
+                        Second Year
+                        {% elif item.year == 'third' %}
+                        Third Year
+                        {% elif item.year == 'final' %}
+                        Final Year
+                        {% endif %}
+
+                    </td>
                     <td>{{ item.responsetext}}</td>
                     <td>{{ item.posteddate}}</td>
                     <td>
                         <a href="{% url 'deletefeedback' id=item.id %}">
-                            <button type="button" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure!!')">Delete</button>
+                            <button type="button" class="btn btn-danger btn-sm"
+                                onclick="return confirm('Are you sure!!')">Delete</button>
                         </a>
                     </td>
                 </tr>

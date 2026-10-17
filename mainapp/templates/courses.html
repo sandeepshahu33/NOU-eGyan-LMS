@@ -1,241 +1,675 @@
+
 {% extends 'base1.html' %}
 {% load static %}
 
 {% block main %}
-<div class="container-fluid p-0">
-    <div class="row  ">
-        <div class="col-sm-12 contact-bg-img1">
-            <div class="row pt-4">
-                <div class="col-sm-9 mx-auto">
-                    <h3 class="text-light">Courses</h3>
-                    <p class="text-light"> <a href="#" class="text-warning">Home</a> / Courses</p>
+
+<!-- Courses Hero Banner -->
+<section class="courses-hero">
+    <div class="courses-hero-overlay"></div>
+
+    <div class="container courses-hero-content">
+        <span class="courses-eyebrow">
+            <i class="fa-solid fa-graduation-cap"></i>
+            EXPLORE YOUR FUTURE
+        </span>
+
+        <h1>Discover Your <span>Course</span></h1>
+
+        <p>
+            Find the right learning path and take the next step
+            towards your academic and professional goals.
+        </p>
+
+        <div class="courses-breadcrumb">
+            <a href="{% url 'index' %}">
+                <i class="fa-solid fa-house"></i> Home
+            </a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Courses</span>
+        </div>
+    </div>
+</section>
+
+<!-- Courses Section -->
+<section class="courses-section">
+    <div class="container">
+
+        <!-- Section Heading -->
+        <div class="courses-section-heading">
+            <div>
+                <span class="courses-section-label">OUR ACADEMIC PROGRAMS</span>
+                <h2>Explore Our <span>Courses</span></h2>
+                <p>
+                    Choose a program that matches your interests
+                    and helps you achieve your goals.
+                </p>
+            </div>
+
+            <div class="courses-total">
+                <i class="fa-solid fa-book-open"></i>
+                <div>
+                    <strong id="courseCount">24</strong>
+                    <span>Available Courses</span>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="row mt-5">
-        <div class="col-sm-9 mx-auto">
-            <p class="mb-0 text-uppercase">Courses</p>
-            <h3 class="text-uppercase">Our <span class="text-maroon">Courses Detail</span></h3>
+        <!-- Course Filters -->
+        <div class="courses-filter-wrap">
+            <div class="courses-filters" role="group"
+                 aria-label="Filter courses">
+
+                <button type="button"
+                        class="course-filter active"
+                        data-filter="all"
+                        aria-pressed="true">
+                    <i class="fa-solid fa-layer-group"></i>
+                    All Courses
+                </button>
+
+                <button type="button"
+                        class="course-filter"
+                        data-filter="ug"
+                        aria-pressed="false">
+                    UG Courses
+                </button>
+
+                <button type="button"
+                        class="course-filter"
+                        data-filter="pg"
+                        aria-pressed="false">
+                    PG Courses
+                </button>
+
+                <button type="button"
+                        class="course-filter"
+                        data-filter="diploma"
+                        aria-pressed="false">
+                    Diploma Courses
+                </button>
+
+                <button type="button"
+                        class="course-filter"
+                        data-filter="certificate"
+                        aria-pressed="false">
+                    Certification
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Course Cards -->
+        <div class="courses-grid" id="coursesGrid">
+
+            <!-- UG Courses -->
+
+            <article class="course-card" data-category="ug">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co1.png' %}"
+                         alt="Bachelor in Business Administration"
+                         loading="lazy">
+                    <span class="course-category-badge">UG PROGRAM</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">UNDERGRADUATE</span>
+                    <h3>Bachelor in Business Administration</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 3 years</span>
+                        <span><i class="fa-solid fa-book-open"></i> UG</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="ug">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co2.png' %}"
+                         alt="Bachelor in Computer Application"
+                         loading="lazy">
+                    <span class="course-category-badge">UG PROGRAM</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">UNDERGRADUATE</span>
+                    <h3>Bachelor in Computer Application</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 3 years</span>
+                        <span><i class="fa-solid fa-book-open"></i> UG</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="ug">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co3.png' %}"
+                         alt="Bachelor of Arts in Geography"
+                         loading="lazy">
+                    <span class="course-category-badge">UG PROGRAM</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">UNDERGRADUATE</span>
+                    <h3>Bachelor of Arts (Geography)</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 3 years</span>
+                        <span><i class="fa-solid fa-book-open"></i> UG</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="ug">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co4.png' %}"
+                         alt="Undergraduate course"
+                         loading="lazy">
+                    <span class="course-category-badge">UG PROGRAM</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">UNDERGRADUATE</span>
+                    <h3>Bachelor of Arts (Geography)</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 3 years</span>
+                        <span><i class="fa-solid fa-book-open"></i> UG</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="ug">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co5.png' %}"
+                         alt="Bachelor of Library and Information Science"
+                         loading="lazy">
+                    <span class="course-category-badge">UG PROGRAM</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">UNDERGRADUATE</span>
+                    <h3>Bachelor of Library &amp; Information Science</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 1 year</span>
+                        <span><i class="fa-solid fa-book-open"></i> UG</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="ug">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co6.png' %}"
+                         alt="Bachelor of Science in Chemistry"
+                         loading="lazy">
+                    <span class="course-category-badge">UG PROGRAM</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">UNDERGRADUATE</span>
+                    <h3>Bachelor of Science (Chemistry)</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 3 years</span>
+                        <span><i class="fa-solid fa-book-open"></i> UG</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- PG Courses -->
+
+            <article class="course-card" data-category="pg">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co7.png' %}"
+                         alt="Master of Arts in Environmental Science"
+                         loading="lazy">
+                    <span class="course-category-badge">PG PROGRAM</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">POSTGRADUATE</span>
+                    <h3>Master of Arts (Environmental Science)</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 2 years</span>
+                        <span><i class="fa-solid fa-book-open"></i> PG</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="pg">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co8.png' %}"
+                         alt="Master of Arts in Sanskrit"
+                         loading="lazy">
+                    <span class="course-category-badge">PG PROGRAM</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">POSTGRADUATE</span>
+                    <h3>Master of Arts (Sanskrit)</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 2 years</span>
+                        <span><i class="fa-solid fa-book-open"></i> PG</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="pg">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co9.png' %}"
+                         alt="Master in Computer Application"
+                         loading="lazy">
+                    <span class="course-category-badge">PG PROGRAM</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">POSTGRADUATE</span>
+                    <h3>Master in Computer Application</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 2 years</span>
+                        <span><i class="fa-solid fa-book-open"></i> PG</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="pg">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co10.png' %}"
+                         alt="Master of Commerce"
+                         loading="lazy">
+                    <span class="course-category-badge">PG PROGRAM</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">POSTGRADUATE</span>
+                    <h3>Master of Commerce</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 2 years</span>
+                        <span><i class="fa-solid fa-book-open"></i> PG</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="pg">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co11.png' %}"
+                         alt="Master of Science in Physics"
+                         loading="lazy">
+                    <span class="course-category-badge">PG PROGRAM</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">POSTGRADUATE</span>
+                    <h3>Master of Science (Physics)</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 2 years</span>
+                        <span><i class="fa-solid fa-book-open"></i> PG</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="pg">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co12.png' %}"
+                         alt="Master in Library and Information Science"
+                         loading="lazy">
+                    <span class="course-category-badge">PG PROGRAM</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">POSTGRADUATE</span>
+                    <h3>Master in Library and Information Science</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 2 years</span>
+                        <span><i class="fa-solid fa-book-open"></i> PG</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Diploma Courses -->
+
+            <article class="course-card" data-category="diploma">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co13.png' %}"
+                         alt="PG Diploma in Financial Management"
+                         loading="lazy">
+                    <span class="course-category-badge">DIPLOMA</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">DIPLOMA PROGRAM</span>
+                    <h3>PG Diploma in Financial Management</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 2 years</span>
+                        <span><i class="fa-solid fa-certificate"></i> Diploma</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="diploma">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co14.png' %}"
+                         alt="Postgraduate Diploma in Hindi-English Translation"
+                         loading="lazy">
+                    <span class="course-category-badge">DIPLOMA</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">DIPLOMA PROGRAM</span>
+                    <h3>PG Diploma (Hindi-English Translation)</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 2 years</span>
+                        <span><i class="fa-solid fa-certificate"></i> Diploma</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="diploma">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co15.png' %}"
+                         alt="Postgraduate Diploma in Yogic Studies"
+                         loading="lazy">
+                    <span class="course-category-badge">DIPLOMA</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">DIPLOMA PROGRAM</span>
+                    <h3>PG Diploma (Yogic Studies)</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 2 years</span>
+                        <span><i class="fa-solid fa-certificate"></i> Diploma</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="diploma">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co16.png' %}"
+                         alt="Postgraduate Diploma in Information and Public Relations"
+                         loading="lazy">
+                    <span class="course-category-badge">DIPLOMA</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">DIPLOMA PROGRAM</span>
+                    <h3>PG Diploma (Information and Public Relations)</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 2 years</span>
+                        <span><i class="fa-solid fa-certificate"></i> Diploma</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="diploma">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co17.png' %}"
+                         alt="Postgraduate Diploma in Marketing Management"
+                         loading="lazy">
+                    <span class="course-category-badge">DIPLOMA</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">DIPLOMA PROGRAM</span>
+                    <h3>PG Diploma (Marketing Management)</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 2 years</span>
+                        <span><i class="fa-solid fa-certificate"></i> Diploma</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="diploma">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co18.png' %}"
+                         alt="Postgraduate Diploma in Journalism and Mass Communication"
+                         loading="lazy">
+                    <span class="course-category-badge">DIPLOMA</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">DIPLOMA PROGRAM</span>
+                    <h3>PG Diploma (Journalism &amp; Mass Communication)</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 2 years</span>
+                        <span><i class="fa-solid fa-certificate"></i> Diploma</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Certification Courses -->
+
+            <article class="course-card" data-category="certificate">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co19.png' %}"
+                         alt="Certificate in Abolition of Child Labour"
+                         loading="lazy">
+                    <span class="course-category-badge">CERTIFICATE</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">CERTIFICATION PROGRAM</span>
+                    <h3>Certificate in Abolition of Child Labour</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 1 year</span>
+                        <span><i class="fa-solid fa-award"></i> Certificate</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="certificate">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co20.png' %}"
+                         alt="Certificate in Artificial Insemination and Minor Veterinary Services"
+                         loading="lazy">
+                    <span class="course-category-badge">CERTIFICATE</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">CERTIFICATION PROGRAM</span>
+                    <h3>Certificate in Artificial Insemination and Minor Veterinary Services</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 1 year</span>
+                        <span><i class="fa-solid fa-award"></i> Certificate</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="certificate">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co21.png' %}"
+                         alt="Certificate in Bio-Fertilizer Production"
+                         loading="lazy">
+                    <span class="course-category-badge">CERTIFICATE</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">CERTIFICATION PROGRAM</span>
+                    <h3>Certificate in Bio-Fertilizer Production</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 1 year</span>
+                        <span><i class="fa-solid fa-award"></i> Certificate</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="certificate">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co22.png' %}"
+                         alt="Certificate in Bhojpuri Language"
+                         loading="lazy">
+                    <span class="course-category-badge">CERTIFICATE</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">CERTIFICATION PROGRAM</span>
+                    <h3>Certificate in Bhojpuri Language</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 1 year</span>
+                        <span><i class="fa-solid fa-award"></i> Certificate</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="certificate">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co23.png' %}"
+                         alt="Certificate in Basic Medical Assessment and Nursing Care"
+                         loading="lazy">
+                    <span class="course-category-badge">CERTIFICATE</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">CERTIFICATION PROGRAM</span>
+                    <h3>Certificate in Basic Medical Assessment and Nursing Care</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 1 year</span>
+                        <span><i class="fa-solid fa-award"></i> Certificate</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="course-card" data-category="certificate">
+                <div class="course-card-image">
+                    <img src="{% static 'images/co24.png' %}"
+                         alt="Certificate in Child Psychology and Guidance"
+                         loading="lazy">
+                    <span class="course-category-badge">CERTIFICATE</span>
+                </div>
+                <div class="course-card-body">
+                    <span class="course-type">CERTIFICATION PROGRAM</span>
+                    <h3>Certificate in Child Psychology and Guidance</h3>
+                    <div class="course-card-meta">
+                        <span><i class="fa-regular fa-clock"></i> 1 year</span>
+                        <span><i class="fa-solid fa-award"></i> Certificate</span>
+                    </div>
+                    <a href="{% url 'enquiry' %}" class="course-learn-link">
+                        Enquire Now <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- No Results Message -->
+        <div class="courses-no-results" id="noCoursesMessage" hidden>
+            <i class="fa-solid fa-book-open"></i>
+            <h3>No courses found</h3>
+            <p>Please choose another course category.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Call To Action -->
+<section class="courses-cta-section">
+    <div class="container">
+        <div class="courses-cta">
+            <div class="courses-cta-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div class="courses-cta-content">
+                <span>YOUR FUTURE STARTS HERE</span>
+                <h2>Ready to Begin Your Learning Journey?</h2>
+                <p>
+                    Have questions about a course? Contact us
+                    to learn more about your options.
+                </p>
+            </div>
+
+            <a href="{% url 'enquiry' %}" class="courses-cta-btn">
+                Make an Enquiry
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
         </div>
     </div>
-    <div class="row my-4">
-        <div class="col-sm-7 mx-auto  d-flex justify-content-center gap-3">
-            <button class="course-btn border bg-warning text-light">All</button>
-            <button class="course-btn">UG Courses</button>
-            <button class="course-btn">PG Courses</button>
-            <button class="course-btn">Diploma Courses</button>
-            <button class="course-btn"> Certification Courses</button>
-        </div>
-    </div>
-    <div class="row justify-content-center gap-1 mt-5">
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co1.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Bachelor in Business Administration</p>
-                <p class="text-center"><b>Under Graduation Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 3 years</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co2.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Bachelor in Computer Application</p>
-                <p class="text-center"><b>Under Graduation Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 3 years</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co3.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Bachelor of Arts(Geography)</p>
-                <p class="text-center"><b>Under Graduation Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 3 years</p>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center gap-1 mt-5">
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co4.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Bachelor of Arts(Geography)</p>
-                <p class="text-center"><b>Under Graduation Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 3 years</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co5.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Bachelor of Library & Information Science</p>
-                <p class="text-center"><b>Under Graduation Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 1 years</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co6.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Bachelor of Science(Chemistry)</p>
-                <p class="text-center"><b>Under Graduation Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 3 years</p>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center gap-1 mt-5">
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co7.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Master of Arts (Environmental Science)</p>
-                <p class="text-center"><b>Under Graduation Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 2 years</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co8.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Master of Arts(Sanskrit)</p>
-                <p class="text-center"><b>Under Graduation Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 2 years</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co9.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Master in Computer Application</p>
-                <p class="text-center"><b>Under Graduation Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 2 years</p>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center gap-1 mt-5">
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co10.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Master of Commerce</p>
-                <p class="text-center"><b>Under Graduation Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 2 years</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co11.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Master of Science(Physics)</p>
-                <p class="text-center"><b>Under Graduation Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 2 years</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co12.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Master in Library and Information Science</p>
-                <p class="text-center"><b>Under Graduation Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 2 years</p>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center gap-1 mt-5">
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co13.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">PG Diploma in Financial Management</p>
-                <p class="text-center"><b>Diploma Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 2 years</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co14.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Post Graduation Diploma (Hindi-English Translate)</p>
-                <p class="text-center"><b>Diploma Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 2 years</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co15.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Post Graduation Diploma (Yogic Studies)</p>
-                <p class="text-center"><b>Diploma Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 2 years</p>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center gap-1 mt-5">
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co16.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Post Graduation Diploma (Information and Public Relations)</p>
-                <p class="text-center"><b>Diploma Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 2 years</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co17.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Post Graduation Diploma (Marketing Management)</p>
-                <p class="text-center"><b>Diploma Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 2 years</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co18.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Post Graduation Diploma (Journalism & Mass Communication)</p>
-                <p class="text-center"><b>Diploma Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 2 years</p>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center gap-1 mt-5">
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co19.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Certificate in Abolition of Child Labour</p>
-                <p class="text-center"><b>Certification Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 1 years</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co20.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Certificate in Artificial Insemination and Minor Veterinary Services</p>
-                <p class="text-center"><b>Certification Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 1 years</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co21.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Certificate in Bio-Fertilizer Production</p>
-                <p class="text-center"><b>Certification Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 1 years</p>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center gap-1 mt-5">
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co22.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Certificate in Bhojpuri Language</p>
-                <p class="text-center"><b>Certification Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 1 years</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co23.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Certificate in Basic Medical Assessment and Nursing Care</p>
-                <p class="text-center"><b>Certification Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 1 years</p>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="course-img-outer">
-                <img src="{% static 'images/co24.png' %}" class="img-fluid" alt="">
-                <p class="text-maroon text-center py-2 mb-0">Certificate in Child Psychology and Guidance</p>
-                <p class="text-center"><b>Certification Course</b></p>
-                <p class="text-center"><span class="text-warning">Duration:</span> 1 years</p>
-            </div>
-        </div>
-    </div>
-</div>
+</section>
+
+<!-- Course Filter JavaScript -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll(".course-filter");
+    const courseCards = document.querySelectorAll(".course-card");
+    const courseCount = document.getElementById("courseCount");
+    const noCoursesMessage = document.getElementById("noCoursesMessage");
+
+    function filterCourses(category) {
+        let visibleCount = 0;
+
+        courseCards.forEach(function (card) {
+            const matches =
+                category === "all" ||
+                card.dataset.category === category;
+
+            card.hidden = !matches;
+
+            if (matches) {
+                visibleCount++;
+            }
+        });
+
+        courseCount.textContent = visibleCount;
+        noCoursesMessage.hidden = visibleCount !== 0;
+    }
+
+    filterButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            filterButtons.forEach(function (item) {
+                item.classList.remove("active");
+                item.setAttribute("aria-pressed", "false");
+            });
+
+            button.classList.add("active");
+            button.setAttribute("aria-pressed", "true");
+
+            filterCourses(button.dataset.filter);
+        });
+    });
+
+    filterCourses("all");
+});
+</script>
+
 {% endblock main %}

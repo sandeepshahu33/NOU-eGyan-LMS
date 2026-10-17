@@ -1,79 +1,261 @@
-{% extends 'base1.html' %}
 
+{% extends 'base1.html' %}
 {% load static %}
 
-
 {% block main %}
-<div class="container-fluid p-0 ">
-    <!-- Background image start -->
 
-    <div class="row  ">
-        <div class="col-sm-12 contact-bg-img1">
-            <div class="row pt-4">
-                <div class="col-sm-9 mx-auto">
-                    <h3 class="text-light">Contact Us</h3>
-                    <p class="text-light"> <a href="#" class="text-warning">Home</a> / Contact Us</p>
+<!-- =========================
+     CONTACT HERO SECTION
+========================= -->
+<section class="contact-hero">
+    <div class="contact-hero-circle"></div>
+
+    <div class="container contact-hero-content">
+        <span class="contact-eyebrow">
+            NOU e-GYAN • WE ARE HERE TO HELP
+        </span>
+
+        <h1>Contact <span>Us</span></h1>
+
+        <p>
+            Have a question or need assistance?
+            Connect with us for information and support.
+        </p>
+
+        <div class="contact-breadcrumb">
+            <a href="{% url 'index' %}">Home</a>
+            <span>/</span>
+            <span>Contact Us</span>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================
+     CONTACT INTRODUCTION
+========================= -->
+<section class="contact-intro">
+    <div class="container text-center">
+        <span class="contact-section-label">GET IN TOUCH</span>
+
+        <h2>We'd Love to <span>Hear From You</span></h2>
+
+        <p>
+            Reach out to the university using the contact
+            information below. We're here to help you find
+            the information you need.
+        </p>
+    </div>
+</section>
+
+
+<!-- =========================
+     CONTACT INFORMATION CARDS
+========================= -->
+<section class="contact-details-section">
+    <div class="container">
+
+        <div class="contact-info-grid">
+
+            <!-- Address -->
+            <div class="contact-info-card">
+                <div class="contact-info-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <span class="contact-card-label">VISIT US</span>
+
+                <h3>Our Location</h3>
+
+                <p>
+                    2nd/3rd Floor, Biscomaun Bhawan,
+                    Gandhi Maidan, Patna - 800001
+                </p>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=Biscomaun+Bhawan+Gandhi+Maidan+Patna"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="contact-card-link">
+                    Get Directions <span>→</span>
+                </a>
+            </div>
+
+
+            <!-- Email -->
+            <div class="contact-info-card">
+                <div class="contact-info-icon">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+
+                <span class="contact-card-label">WRITE TO US</span>
+
+                <h3>Email Address</h3>
+
+                <a href="mailto:nou@nou.ac.in" class="contact-detail-link">
+                    nou@nou.ac.in
+                </a>
+
+                <a href="mailto:registrar@nou.ac.in"
+                   class="contact-detail-link">
+                    registrar@nou.ac.in
+                </a>
+
+                <p class="contact-card-note">
+                    Send your queries through email.
+                </p>
+            </div>
+
+
+            <!-- Phone -->
+            <div class="contact-info-card">
+                <div class="contact-info-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <span class="contact-card-label">CALL US</span>
+
+                <h3>Phone Numbers</h3>
+
+                <a href="tel:06122201013" class="contact-detail-link">
+                    0612-2201013
+                </a>
+
+                <a href="tel:06122206916" class="contact-detail-link">
+                    0612-2206916
+                </a>
+
+                <p class="contact-card-note">
+                    Contact us for general enquiries.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================
+     UNIVERSITY ADDRESS SECTION
+========================= -->
+<section class="contact-address-section">
+    <div class="container">
+
+        <div class="contact-address-layout">
+
+            <div class="contact-address-content">
+                <span class="contact-section-label">
+                    FIND OUR OFFICE
+                </span>
+
+                <h2>
+                    Visit Our <span>University</span>
+                </h2>
+
+                <p class="contact-address-description">
+                    We welcome your enquiries. Use the details below
+                    to locate our office or get in touch with the
+                    university.
+                </p>
+
+                <div class="contact-address-item">
+                    <div class="contact-address-icon">
+                        <i class="fa-solid fa-map-pin"></i>
+                    </div>
+
+                    <div>
+                        <h4>Postal Address</h4>
+                        <p>
+                            2nd/3rd Floor, Biscomaun Bhawan,<br>
+                            Gandhi Maidan, Patna - 800001
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-address-item">
+                    <div class="contact-address-icon">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+
+                    <div>
+                        <h4>Telephone</h4>
+                        <p>0612-2201013, 0612-2206916</p>
+                    </div>
+                </div>
+
+                <div class="contact-address-item">
+                    <div class="contact-address-icon">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+
+                    <div>
+                        <h4>Email</h4>
+                        <p>nou@nou.ac.in</p>
+                    </div>
+                </div>
+
+                <div class="contact-fax">
+                    <span>Fax:</span> 0612-2201001
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Background image end -->
 
-    <div class="row mt-5">
-        <div class="col-sm-9 mx-auto">
-            <p class="mb-0 text-uppercase">Contact</p>
-            <h3>Contact <span class="text-maroon">Us</span></h3>
-        </div>
-    </div>
-    <!-- Address section start -->
 
-    <div class="row mt-5 justify-content-center gap-5">
-        <div class="col-sm-5 contact-bg-img2">
+            <!-- Map -->
+            <div class="contact-map-wrapper">
+                <div class="contact-map-heading">
+                    <div>
+                        <span>OUR LOCATION</span>
+                        <h3>Find Us on the Map</h3>
+                    </div>
 
-        </div>
-        <div class="col-sm-5">
-            <p class="text-orange">You can find on us</p>
-            <h3 class="text-maroon"><b>Our Address</b></h3>
-            <p><span class="text-orange"><b>Address:</b></span> 2nd/3rd Floor,Biscomaun Bhawan,Gandhi Maidan,Patna-
-                800001</p>
-            <p><span class="text-orange"><b>Telephone :</b></span> 0612-2201013, 0612-2206916</p>
-            <p><span class="text-orange"><b>Fax :</b></span> 0612-2201001</p>
-            <p><span class="text-orange"><b>Email :</b></span> nou@nou.ac.in</p>
-        </div>
-    </div>
-    <!-- Address section end -->
-    <div class="row justify-content-center gap-5 mt-5">
-        <div class="col-sm-3 d-flex flex-column align-items-center justify-content-center text-center">
-            <div class="cont-location d-flex flex-column align-items-center justify-content-center text-center">
-                <i class="fa-solid fa-location-dot"></i>
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+
+                <div class="contact-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.3674831442177!2d80.96215187489541!3d26.923562159625238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd7e0637bf21%3A0x730fe46201abc68a!2sSoftpro%20Learning%20Center!5e0!3m2!1sen!2sin!4v1789295102148!5m2!1sen!2sin"
+                        title="Map showing the embedded location"
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <p class="contact-map-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Please verify the map location before visiting.
+                </p>
             </div>
-            <h4 class="text-maroon my-2"><b>Location:</b></h4>
-            <p class="mb-0 mt-3">2nd/3rd Floor, Biscomaun</p>
-            <p>Gandhi Maidan, Patna</p>
-        </div>
-        <div class="col-sm-3  d-flex flex-column align-items-center justify-content-center text-center">
-            <div class="cont-location d-flex flex-column align-items-center justify-content-center text-center">
-                <i class="fa-solid fa-envelope"></i>
-            </div>
-            <h4 class="text-maroon mt-2"><b>Email:</b></h4>
-            <p class="mb-0 mt-3">nou@nou.ac.in</p>
-            <p>registrar@nou.ac.in</p>
-        </div>
-        <div class="col-sm-3  d-flex flex-column align-items-center justify-content-center text-center">
-            <div class="cont-location d-flex flex-column align-items-center justify-content-center text-center">
-                <i class="fa-solid fa-phone"></i>
-            </div>
-            <h4 class="text-maroon mt-2"><b>Phone:</b></h4>
-            <p class="mb-0 mt-3">0612-2201013</p>
-            <p>0612-2206916</p>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-sm-12">
-            <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.3674831442177!2d80.96215187489541!3d26.923562159625238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd7e0637bf21%3A0x730fe46201abc68a!2sSoftpro%20Learning%20Center!5e0!3m2!1sen!2sin!4v1789295102148!5m2!1sen!2sin" width="600" height="450" style="border:0; height: 450px; width: 100%; margin: 0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
     </div>
-</div>
+</section>
+
+
+<!-- =========================
+     CONTACT CTA
+========================= -->
+<section class="contact-cta-section">
+    <div class="container">
+        <div class="contact-cta">
+
+            <div>
+                <span>NEED MORE INFORMATION?</span>
+
+                <h2>We're Just a Message Away</h2>
+
+                <p>
+                    Have a question about the portal?
+                    Send us an email and get in touch.
+                </p>
+            </div>
+
+            <a href="mailto:nou@nou.ac.in" class="contact-cta-btn">
+                Email Us
+                <i class="fa-regular fa-envelope"></i>
+            </a>
+
+        </div>
+    </div>
+</section>
 
 {% endblock main %}

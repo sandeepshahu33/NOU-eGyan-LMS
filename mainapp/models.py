@@ -25,7 +25,12 @@ class StudentInfo(models.Model):
     emailaddress=models.EmailField(max_length=50)
     regdate=models.CharField(max_length=30)
 
+    def __str__(self):
+        return f"{self.name} {self.rollno}"
+
 class LoginInfo(models.Model):
     username=models.CharField(max_length=50, primary_key=True)
     password=models.CharField(max_length=30)
     usertype=models.CharField(max_length=30)
+    def __str__(self):
+        return f"{self.username}"

@@ -24,11 +24,59 @@
                 {% for m in mat %}
                 <tr>
                     <td>{{m.mid}}</td>
-                    <td>{{m.program}}</td>
-                    <td>{{m.branch}}</td>
-                    <td>{{m.year}}</td>
+                    {% comment %} <td>{{m.program}}</td> {% endcomment %}
+                    <td>
+                        
+                        {% if m.program == 'btech' %}
+                        B.Tech
+                        {% elif m.program == 'mtech' %}
+                        M.Tech
+                        {% elif m.program == 'bca' %}
+                        BCA
+                        {% elif m.program == 'mca' %}
+                        MCA
+                        {% endif %}
+                            
+                    </td>
+                    {% comment %} <td>{{m.branch}}</td> {% endcomment %}
+                    <td>
+                        
+                        {% if m.branch == 'cs' %}
+                        Computer Science
+                        {% elif m.branch == 'it' %}
+                        Information Technology
+                        {% elif m.branch == 'ca' %}
+                        Compurt Application
+                        {% elif m.branch == 'ce' %}
+                        Civil engineering
+                        {% endif %}
+                            
+                    </td>
+                    {% comment %} <td>{{m.year}}</td> {% endcomment %}
+                    <td>
+                        
+                        {% if m.year == 'first' %}
+                        First Year
+                        {% elif m.year == 'second' %}
+                        Second Year
+                        {% elif m.year == 'third' %}
+                        Third Year
+                        {% elif m.year == 'final' %}
+                        Final Year
+                        {% endif %}
+                            
+                    </td>
                     <td>{{m.subject}}</td>
-                    <td>{{m.materialtype}}</td>
+                    {% comment %} <td>{{m.materialtype}}</td> {% endcomment %}
+                    <td>
+                        
+                        {% if m.materialtype == 'smat' %}
+                        Study Material
+                        {% else %}
+                        Assignment
+                        {% endif %}
+                            
+                    </td>
                     <td>
                         <a download href="{{m.myfile.url}}">{{m.filename}}</a>
                     </td>
