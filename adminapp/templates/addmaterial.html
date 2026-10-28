@@ -1,88 +1,261 @@
+
 {% extends 'adminbase.html' %}
 {% load static %}
-{% block admin %}
-<div class="container">
-    <div class="row bg-primary text-light p-3" style="border-radius: 20px">
-        <div class="col-sm-12">
-            <h3 class="text-light mb-0 text-center pt-2">Add Study Material</h3>
-            <p></p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <form class="form-group" method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                <table class="table table-border" style="width: 60%; margin: auto;">
-                    <tr>
-                        <td>Select Program</td>
-                        <td>
-                            <select name="program" id="" class="form-select">
-                                <option value="">---Select Any Course---</option>
-                                <option value="btech">B.Tech.</option>
-                                <option value="mtech">M.Tech.</option>
-                                <option value="bca">BCA</option>
-                                <option value="mca">MCA</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Select Branch</td>
-                        <td>
-                            <select name="branch" id="" class="form-select">
-                                <option value="">---Select Any branch---</option>
-                                <option value="cs">Computer Science</option>
-                                <option value="it">Information Technology</option>
-                                <option value="ca">Computer Application</option>
-                                <option value="ce">Civil Engineering</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Select Persuing Year</td>
-                        <td>
-                            <select name="year" id="" class="form-select">
-                                <option value="">---Select any year---</option>
-                                <option value="first">First Year</option>
-                                <option value="second">Second Year</option>
-                                <option value="third">Third Year</option>
-                                <option value="final">Final Year</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Enter Subject</td>
-                        <td><input type="text" name="subject" class="form-control" required></td>
-                    </tr>
-                    <tr>
-                        <td>Select Material Type</td>
-                        <td>
-                            <select name="materialtype" id="" class="form-select">
-                                <option value="">---select material---</option>
-                                <option value="smat">Study Material</option>
-                                <option value="assign">Assignment</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Enter File Name</td>
-                        <td><input type="text" name="filename" class="form-control" required></td>
-                    </tr>
-                    <tr>
-                        <td>Upload File</td>
-                        <td>
-                            <input type="file" name="myfile" class="form-control" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <button type="submit" class="btn btn-success">Add Material</button>
-                        </td>
-                    </tr>
-                </table>
 
-            </form>
+{% block admin %}
+
+<link rel="stylesheet" href="{% static 'admin/assets/css/add-studymaterial.css' %}">
+
+<div class="material-page">
+
+    <!-- Page Header -->
+    <div class="material-header">
+        <div class="header-content">
+            <div class="header-icon">
+                <i class="ti ti-book"></i>
+            </div>
+
+            <div>
+                <span class="header-subtitle">ACADEMIC RESOURCES</span>
+                <h2>Add Study Material</h2>
+                <p>Upload study materials and assignments for students.</p>
+            </div>
+        </div>
+
+        <div class="header-badge">
+            <i class="ti ti-cloud-upload"></i>
+            Resource Upload
         </div>
     </div>
+
+    <!-- Main Form Card -->
+    <div class="material-card">
+
+        <div class="card-heading">
+            <div>
+                <h4>Material Information</h4>
+                <p>Fill in the details below to add a new resource.</p>
+            </div>
+
+            <span class="required-note">
+                <span>*</span> Required fields
+            </span>
+        </div>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <!-- Academic Details -->
+            <div class="form-section">
+                <div class="section-title">
+                    <span class="section-icon">
+                        <i class="ti ti-school"></i>
+                    </span>
+                    <div>
+                        <h5>Academic Details</h5>
+                        <p>Select the academic category for this resource.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+
+                    <!-- Program -->
+                    <div class="form-field">
+                        <label for="program">
+                            Program <span>*</span>
+                        </label>
+
+                        <select name="program" id="program"
+                                class="form-control" required>
+                            <option value="" selected disabled>
+                                Select a program
+                            </option>
+                            <option value="btech">B.Tech.</option>
+                            <option value="mtech">M.Tech.</option>
+                            <option value="bca">BCA</option>
+                            <option value="mca">MCA</option>
+                        </select>
+                    </div>
+
+                    <!-- Branch -->
+                    <div class="form-field">
+                        <label for="branch">
+                            Branch <span>*</span>
+                        </label>
+
+                        <select name="branch" id="branch"
+                                class="form-control" required>
+                            <option value="" selected disabled>
+                                Select a branch
+                            </option>
+                            <option value="cs">Computer Science</option>
+                            <option value="it">Information Technology</option>
+                            <option value="ca">Computer Application</option>
+                            <option value="ce">Civil Engineering</option>
+                        </select>
+                    </div>
+
+                    <!-- Year -->
+                    <div class="form-field">
+                        <label for="year">
+                            Pursuing Year <span>*</span>
+                        </label>
+
+                        <select name="year" id="year"
+                                class="form-control" required>
+                            <option value="" selected disabled>
+                                Select academic year
+                            </option>
+                            <option value="first">First Year</option>
+                            <option value="second">Second Year</option>
+                            <option value="third">Third Year</option>
+                            <option value="final">Final Year</option>
+                        </select>
+                    </div>
+
+                    <!-- Subject -->
+                    <div class="form-field">
+                        <label for="subject">
+                            Subject Name <span>*</span>
+                        </label>
+
+                        <input type="text" name="subject" id="subject"
+                               class="form-control"
+                               placeholder="e.g. Python Programming"
+                               required>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Resource Details -->
+            <div class="form-section">
+                <div class="section-title">
+                    <span class="section-icon">
+                       <span style="color: #762640;">📄</span>
+                    </span>
+                    <div>
+                        <h5>Resource Details</h5>
+                        <p>Provide the material type and its display name.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+
+                    <!-- Material Type -->
+                    <div class="form-field">
+                        <label for="materialtype">
+                            Material Type <span>*</span>
+                        </label>
+
+                        <select name="materialtype" id="materialtype"
+                                class="form-control" required>
+                            <option value="" selected disabled>
+                                Select material type
+                            </option>
+                            <option value="smat">Study Material</option>
+                            <option value="assign">Assignment</option>
+                        </select>
+                    </div>
+
+                    <!-- File Name -->
+                    <div class="form-field">
+                        <label for="filename">
+                            Display File Name <span>*</span>
+                        </label>
+
+                        <input type="text" name="filename" id="filename"
+                               class="form-control"
+                               placeholder="e.g. Unit 1 Notes"
+                               required>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- File Upload -->
+            <div class="form-section upload-section">
+                <div class="section-title">
+                    <span class="section-icon">
+                        <i class="ti ti-cloud-upload"></i>
+                    </span>
+                    <div>
+                        <h5>Upload Document</h5>
+                        <p>Choose the file you want to share with students.</p>
+                    </div>
+                </div>
+
+                <label for="myfile" class="upload-box">
+                    <span class="upload-icon">
+                        <i class="ti ti-file-upload"></i>
+                    </span>
+
+                    <span class="upload-text">
+                        <strong id="file-label">
+                            Click here to select a file
+                        </strong>
+                        <small id="file-help">
+                            Select a document from your device
+                        </small>
+                    </span>
+
+                    <span class="browse-btn">Browse File</span>
+
+                    <input type="file" name="myfile" id="myfile"
+                           required>
+                </label>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="form-actions">
+                <a href="{% url 'studentdata' %}" class="btn-cancel">
+                    <i class="ti ti-arrow-left"></i>
+                    Back
+                </a>
+
+                <button type="reset" class="btn-reset">
+                    <i class="ti ti-refresh"></i>
+                    Reset
+                </button>
+
+                <button type="submit" class="btn-submit">
+                    <i class="ti ti-check"></i>
+                    Add Material
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- Bottom Note -->
+    <div class="material-note">
+        <i class="ti ti-info-circle"></i>
+        <p>Verify the academic details and selected file before submitting.</p>
+    </div>
+
 </div>
+
+<script>
+    const fileInput = document.getElementById("myfile");
+    const fileLabel = document.getElementById("file-label");
+    const fileHelp = document.getElementById("file-help");
+
+    fileInput.addEventListener("change", function () {
+        if (this.files.length > 0) {
+            fileLabel.textContent = this.files[0].name;
+            fileHelp.textContent = "File selected successfully";
+        } else {
+            fileLabel.textContent = "Click here to select a file";
+            fileHelp.textContent = "Select a document from your device";
+        }
+    });
+
+    document.querySelector("form").addEventListener("reset", function () {
+        setTimeout(function () {
+            fileLabel.textContent = "Click here to select a file";
+            fileHelp.textContent = "Select a document from your device";
+        }, 0);
+    });
+</script>
+
 {% endblock %}

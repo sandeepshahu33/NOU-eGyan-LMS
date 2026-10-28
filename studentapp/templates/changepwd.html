@@ -1,38 +1,349 @@
-{% extends 'studentbase.html' %} 
-{% load static %} 
+
+{% extends 'studentbase.html' %}
+{% load static %}
+
 {% block student %}
-<div class="container">
-    <div class="row bg-primary text-light p-3" style="border-radius: 20px">
-        <div class="col-sm-12">
-            <h3 class="text-light mb-0">Change Password</h3>
+
+<link rel="stylesheet" href="{% static 'student/assets/css/changepwd.css' %}">
+
+<div class="change-password-page">
+
+    <!-- Page Header -->
+    <div class="password-header">
+        <div class="password-header-content">
+
+            <div class="password-header-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+
+            <div>
+                <span class="password-eyebrow">ACCOUNT SECURITY</span>
+                <h2>Change Password</h2>
+                <p>Keep your student account secure with a strong password.</p>
+            </div>
+
         </div>
-    </div>  
-    <div class="row">
-        <div class="col-sm-12">
-            <form action="" class="form-group" method="post">
-                {% csrf_token %}
-                <table class="table" style="margin:auto; width:60%;">
-                    <tr>
-                        <td>Enter Old Password</td>
-                        <td><input type="password" name="oldpassword" class="form-control" required></td>
-                    </tr>
-                    <tr>
-                        <td>Enter New Password</td>
-                        <td><input type="password" name="newpassword" class="form-control" required></td>
-                    </tr>
-                    <tr>
-                        <td>Confirm Password</td>
-                        <td><input type="password" name="confirmpassword" class="form-control" required></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <button type="submit" class="bg-success btn text-light">Change Password</button>
-                        </td>
-                    </tr>
-                </table>
-            </form>
+
+        <div class="password-header-decoration">
+            <i class="fas fa-shield-alt"></i>
         </div>
     </div>
+
+    <!-- Main Content -->
+    <div class="password-layout">
+
+        <!-- Security Information -->
+        <div class="security-card">
+
+            <div class="security-icon">
+                <i class="fas fa-user-shield"></i>
+            </div>
+
+            <h3>Protect Your Account</h3>
+
+            <p class="security-description">
+                Update your password regularly to help protect your
+                academic information and student account.
+            </p>
+
+            <div class="security-divider"></div>
+
+            <div class="security-tip">
+                <span class="tip-icon">
+                    <i class="fas fa-check"></i>
+                </span>
+                <p>Use a strong and unique password.</p>
+            </div>
+
+            <div class="security-tip">
+                <span class="tip-icon">
+                    <i class="fas fa-check"></i>
+                </span>
+                <p>Avoid sharing your password with anyone.</p>
+            </div>
+
+            <div class="security-tip">
+                <span class="tip-icon">
+                    <i class="fas fa-check"></i>
+                </span>
+                <p>Never reuse an easily guessed password.</p>
+            </div>
+
+            <div class="security-note">
+                <i class="fas fa-info-circle"></i>
+                <span>
+                    Enter your current password before choosing a new one.
+                </span>
+            </div>
+
+        </div>
+
+        <!-- Password Form -->
+        <div class="password-form-card">
+
+            <div class="form-card-heading">
+                <div>
+                    <h3>Update Your Password</h3>
+                    <p>Fill in all three fields to continue.</p>
+                </div>
+
+                <div class="form-heading-icon">
+                    <i class="fas fa-key"></i>
+                </div>
+            </div>
+
+            <form action="" method="post" id="changePasswordForm">
+                {% csrf_token %}
+
+                <!-- Old Password -->
+                <div class="password-field">
+                    <label for="oldpassword">
+                        Current Password <span>*</span>
+                    </label>
+
+                    <div class="password-input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+
+                        <input
+                            type="password"
+                            name="oldpassword"
+                            id="oldpassword"
+                            placeholder="Enter your current password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="toggle-password"
+                            data-target="oldpassword"
+                            aria-label="Show current password"
+                            aria-pressed="false"
+                        >
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- New Password -->
+                <div class="password-field">
+                    <label for="newpassword">
+                        New Password <span>*</span>
+                    </label>
+
+                    <div class="password-input-wrapper">
+                        <i class="fas fa-key input-icon"></i>
+
+                        <input
+                            type="password"
+                            name="newpassword"
+                            id="newpassword"
+                            placeholder="Enter your new password"
+                            
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="toggle-password"
+                            data-target="newpassword"
+                            aria-label="Show new password"
+                            aria-pressed="false"
+                        >
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+
+                    <!-- Password Strength -->
+                    <div class="strength-section">
+                        <div class="strength-track">
+                            <div
+                                class="strength-fill"
+                                id="strengthFill"
+                            ></div>
+                        </div>
+
+                        <div class="strength-details">
+                            <span>Password strength</span>
+                            <span id="strengthText">Not entered</span>
+                        </div>
+                    </div>
+
+                    <small class="password-hint">
+                        For better security, use at least 8 characters.
+                    </small>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="password-field">
+                    <label for="confirmpassword">
+                        Confirm New Password <span>*</span>
+                    </label>
+
+                    <div class="password-input-wrapper">
+                        <i class="fas fa-shield-alt input-icon"></i>
+
+                        <input
+                            type="password"
+                            name="confirmpassword"
+                            id="confirmpassword"
+                            placeholder="Re-enter your new password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="toggle-password"
+                            data-target="confirmpassword"
+                            aria-label="Show confirm password"
+                            aria-pressed="false"
+                        >
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+
+                    <small id="passwordMatch" class="password-match"></small>
+                </div>
+
+                <!-- Buttons -->
+                <div class="password-actions">
+
+                    <button type="reset" class="password-reset-btn">
+                        <i class="fas fa-undo-alt"></i>
+                        Clear
+                    </button>
+
+                    <button type="submit" class="password-submit-btn">
+                        <i class="fas fa-shield-alt"></i>
+                        Change Password
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
 </div>
+
+<script>
+    // Show / Hide Password
+    document.querySelectorAll(".toggle-password").forEach(function (button) {
+        button.addEventListener("click", function () {
+            const target = document.getElementById(this.dataset.target);
+            const icon = this.querySelector("i");
+
+            const isPassword = target.type === "password";
+
+            target.type = isPassword ? "text" : "password";
+
+            icon.classList.toggle("fa-eye", !isPassword);
+            icon.classList.toggle("fa-eye-slash", isPassword);
+
+            this.setAttribute("aria-pressed", String(isPassword));
+            this.setAttribute(
+                "aria-label",
+                isPassword ? "Hide password" : "Show password"
+            );
+        });
+    });
+
+    // Password Strength
+    const newPassword = document.getElementById("newpassword");
+    const strengthFill = document.getElementById("strengthFill");
+    const strengthText = document.getElementById("strengthText");
+
+    function updateStrength() {
+        const password = newPassword.value;
+        let score = 0;
+
+        if (password.length >= 8) score++;
+        if (/[a-z]/.test(password) && /[A-Z]/.test(password)) score++;
+        if (/[0-9]/.test(password)) score++;
+        if (/[^A-Za-z0-9]/.test(password)) score++;
+
+        const labels = [
+            "Not entered",
+            "Weak",
+            "Fair",
+            "Good",
+            "Strong"
+        ];
+
+        strengthFill.style.width = (score * 25) + "%";
+        strengthFill.dataset.strength = score;
+        strengthText.textContent = password ? labels[score] : labels[0];
+    }
+
+    newPassword.addEventListener("input", function () {
+        updateStrength();
+        checkPasswordMatch();
+    });
+
+    // Confirm Password Match
+    const confirmPassword = document.getElementById("confirmpassword");
+    const passwordMatch = document.getElementById("passwordMatch");
+
+    function checkPasswordMatch() {
+        if (!confirmPassword.value) {
+            passwordMatch.textContent = "";
+            passwordMatch.className = "password-match";
+            return;
+        }
+
+        if (newPassword.value === confirmPassword.value) {
+            passwordMatch.textContent = "Passwords match";
+            passwordMatch.className = "password-match match-success";
+        } else {
+            passwordMatch.textContent = "Passwords do not match";
+            passwordMatch.className = "password-match match-error";
+        }
+    }
+
+    confirmPassword.addEventListener("input", checkPasswordMatch);
+
+    // Prevent submission when confirmation does not match
+    document.getElementById("changePasswordForm").addEventListener(
+        "submit",
+        function (event) {
+            if (newPassword.value !== confirmPassword.value) {
+                event.preventDefault();
+                checkPasswordMatch();
+                confirmPassword.focus();
+            }
+        }
+    );
+
+    // Reset indicators when the form is cleared
+    document.getElementById("changePasswordForm").addEventListener(
+        "reset",
+        function () {
+            setTimeout(function () {
+                strengthFill.style.width = "0%";
+                strengthFill.dataset.strength = "0";
+                strengthText.textContent = "Not entered";
+
+                passwordMatch.textContent = "";
+                passwordMatch.className = "password-match";
+
+                document.querySelectorAll(".toggle-password").forEach(
+                    function (button) {
+                        const target = document.getElementById(
+                            button.dataset.target
+                        );
+                        const icon = button.querySelector("i");
+
+                        target.type = "password";
+                        icon.classList.remove("fa-eye-slash");
+                        icon.classList.add("fa-eye");
+                        button.setAttribute("aria-pressed", "false");
+                    }
+                );
+            }, 0);
+        }
+    );
+</script>
+
 {% endblock %}

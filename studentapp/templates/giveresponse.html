@@ -1,42 +1,179 @@
-{% extends 'studentbase.html' %} 
-{% load static %} 
+
+{% extends 'studentbase.html' %}
+{% load static %}
+
 {% block student %}
-<div class="container">
-    <div class="row bg-primary text-light p-3" style="border-radius: 20px">
-        <div class="col-sm-12">
-            <h3 class="text-light mb-0">Student Response</h3>
+
+<link rel="stylesheet" href="{% static 'student/assets/css/giveresponse.css' %}">
+
+<div class="response-page">
+
+    <!-- Page Header -->
+    <div class="response-header">
+        <div class="response-header-content">
+            <div class="response-header-icon">
+                <i class="fas fa-comment-dots"></i>
+            </div>
+
+            <div>
+                <span class="response-eyebrow">STUDENT SUPPORT</span>
+                <h2>Give Response</h2>
+                <p>Share your feedback or let us know about an issue.</p>
+            </div>
         </div>
-    </div> 
-    <div class="row">
-        <div class="col-sm-12">
-            <form action="" class="form-group" method="post">
-                {% csrf_token %}
-                <table class="table" style="margin:auto; width:60%;">
-                    <tr>
-                        <td>Select Response Type</td>
-                        <td>
-                            <select name="responsetype"  class="form-select" required>
-                                <option value="">---Response Type---</option>
-                                <option value="feed">Feedback</option>
-                                <option value="comp">Complaint</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Write Your Response</td>
-                        <td>
-                            <textarea name="responsetext" class="form-control" required></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <button type="submit" class="bg-success btn text-light">Submit</button>
-                        </td>
-                    </tr>
-                </table>
-            </form>
+
+        <div class="response-header-decoration">
+            <i class="fas fa-comments"></i>
         </div>
-    </div> 
+    </div>
+
+    <!-- Feedback / Complaint Cards -->
+    <div class="response-options">
+
+        <div class="response-option feedback-option">
+            <div class="option-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+
+            <div>
+                <h4>Feedback</h4>
+                <p>Share your suggestions and experience.</p>
+            </div>
+        </div>
+
+        <div class="response-option complaint-option">
+            <div class="option-icon">
+                <i class="fas fa-headset"></i>
+            </div>
+
+            <div>
+                <h4>Complaint</h4>
+                <p>Report an issue that needs attention.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Main Form Card -->
+    <div class="response-card">
+
+        <div class="response-card-heading">
+            <div>
+                <h3>Submit Your Response</h3>
+                <p>Please provide the details below.</p>
+            </div>
+
+            <span class="required-label">
+                <span>*</span> Required fields
+            </span>
+        </div>
+
+        <form action="" method="post" class="response-form">
+            {% csrf_token %}
+
+            <!-- Response Type -->
+            <div class="form-field">
+                <label for="responsetype">
+                    Response Type <span>*</span>
+                </label>
+
+                <div class="input-wrapper">
+                    <i class="fas fa-list-alt field-icon"></i>
+
+                    <select
+                        name="responsetype"
+                        id="responsetype"
+                        class="response-select"
+                        required
+                    >
+                        <option value="" selected disabled>
+                            Select feedback or complaint
+                        </option>
+
+                        <option value="feed">Feedback</option>
+                        <option value="comp">Complaint</option>
+                    </select>
+
+                    <i class="fas fa-chevron-down select-arrow"></i>
+                </div>
+
+                <small class="field-help">
+                    Choose the type of response you want to submit.
+                </small>
+            </div>
+
+            <!-- Response Message -->
+            <div class="form-field">
+                <label for="responsetext">
+                    Write Your Response <span>*</span>
+                </label>
+
+                <div class="textarea-wrapper">
+                    <i class="fas fa-pen field-icon textarea-icon"></i>
+
+                    <textarea
+                        name="responsetext"
+                        id="responsetext"
+                        class="response-textarea"
+                        placeholder="Describe your feedback or complaint in detail..."
+                        rows="6"
+                        maxlength="1000"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="textarea-footer">
+                    <small class="field-help">
+                        Please provide clear and relevant information.
+                    </small>
+
+                    <span class="character-count">
+                        <span id="charCount">0</span>/1000
+                    </span>
+                </div>
+            </div>
+
+            <!-- Privacy Note -->
+            <div class="response-note">
+                <i class="fas fa-shield-alt"></i>
+                <p>
+                    Your response will be submitted to the institution
+                    for review.
+                </p>
+            </div>
+
+            <!-- Buttons -->
+            <div class="form-actions">
+                <button type="reset" class="reset-btn">
+                    <i class="fas fa-undo-alt"></i>
+                    Clear Form
+                </button>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Submit Response
+                </button>
+            </div>
+
+        </form>
+    </div>
+
 </div>
+
+<script>
+    const responseTextarea = document.getElementById("responsetext");
+    const charCount = document.getElementById("charCount");
+    const responseForm = document.querySelector(".response-form");
+
+    responseTextarea.addEventListener("input", function () {
+        charCount.textContent = this.value.length;
+    });
+
+    responseForm.addEventListener("reset", function () {
+        setTimeout(function () {
+            charCount.textContent = "0";
+        }, 0);
+    });
+</script>
+
 {% endblock %}

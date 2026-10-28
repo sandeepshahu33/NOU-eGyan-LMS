@@ -1,12 +1,301 @@
-{% extends 'adminbase.html' %} 
-{% load static %} 
+
+{% extends 'adminbase.html' %}
+{% load static %}
+
+{% block dashboard_css %}
+<link rel="stylesheet"
+      href="{% static 'admin/assets/css/admin-dashboard.css' %}">
+{% endblock %}
+
 {% block admin %}
-<div class="container">
-    <div class="row bg-primary text-light p-3" style="border-radius: 20px">
-        <div class="col-sm-12">
-            <h3 class="text-light mb-0">NOU-LMS admin Panel</h3>
-            <p></p>
+
+<div class="admin-dashboard">
+
+    <!-- Welcome Banner -->
+    <section class="dashboard-welcome">
+        <div class="welcome-content">
+            <span class="welcome-label">
+                <i class="ti ti-school"></i>
+                NOU E-GYAN LMS
+            </span>
+
+            <h1>Welcome to Admin Dashboard</h1>
+
+            <p>
+                Manage students, learning materials, enquiries and
+                feedback from one central workspace.
+            </p>
+
+            <div class="welcome-actions">
+                <a href="{% url 'studentdata' %}" class="welcome-btn">
+                    <i class="ti ti-users"></i>
+                    Manage Students
+                </a>
+
+                <a href="{% url 'addmaterial' %}" class="welcome-btn welcome-btn-outline">
+                    <i class="ti ti-file-plus"></i>
+                    Add Material
+                </a>
+            </div>
         </div>
-    </div>  
+
+        <div class="welcome-decoration">
+            <div class="welcome-icon-circle">
+                <i class="ti ti-layout-dashboard"></i>
+            </div>
+            <span class="decoration-dot dot-one"></span>
+            <span class="decoration-dot dot-two"></span>
+            <span class="decoration-dot dot-three"></span>
+        </div>
+    </section>
+
+
+    <!-- Section Heading -->
+    <div class="dashboard-section-heading">
+        <div>
+            <span class="section-eyebrow">OVERVIEW</span>
+            <h2>Portal Statistics</h2>
+            <p>A quick overview of your LMS administration.</p>
+        </div>
+    </div>
+
+
+    <!-- Statistics Cards -->
+    <section class="dashboard-stats">
+
+        <a href="{% url 'studentdata' %}" class="stat-card stat-students">
+            <div class="stat-card-top">
+                <div class="stat-icon">
+                    <i class="ti ti-users"></i>
+                </div>
+                <span class="stat-indicator">Students</span>
+            </div>
+
+            <div class="stat-info">
+                <h3>{{ total_students|default:"—" }}</h3>
+                <p>Registered Students</p>
+            </div>
+
+            <div class="stat-card-footer">
+                <span>View student directory</span>
+                <i class="ti ti-arrow-up-right"></i>
+            </div>
+        </a>
+
+
+        <a href="{% url 'viewmaterial' %}" class="stat-card stat-materials">
+            <div class="stat-card-top">
+                <div class="stat-icon">
+                    <i class="ti ti-book"></i>
+                </div>
+                <span class="stat-indicator">Resources</span>
+            </div>
+
+            <div class="stat-info">
+                <h3>{{ total_materials|default:"—" }}</h3>
+                <p>Learning Materials</p>
+            </div>
+
+            <div class="stat-card-footer">
+                <span>Explore materials</span>
+                <i class="ti ti-arrow-up-right"></i>
+            </div>
+        </a>
+
+
+        <a href="{% url 'viewenquiries' %}" class="stat-card stat-enquiries">
+            <div class="stat-card-top">
+                <div class="stat-icon">
+                    <i class="ti ti-message-circle"></i>
+                </div>
+                <span class="stat-indicator">Communication</span>
+            </div>
+
+            <div class="stat-info">
+                <h3>{{ total_enquiries|default:"—" }}</h3>
+                <p>Student Enquiries</p>
+            </div>
+
+            <div class="stat-card-footer">
+                <span>Review enquiries</span>
+                <i class="ti ti-arrow-up-right"></i>
+            </div>
+        </a>
+
+
+        <a href="{% url 'viewcomplaint' %}" class="stat-card stat-complaints">
+            <div class="stat-card-top">
+                <div class="stat-icon">
+                    <i class="ti ti-clipboard-list"></i>
+                </div>
+                <span class="stat-indicator">Support</span>
+            </div>
+
+            <div class="stat-info">
+                <h3>{{ total_complaints|default:"—" }}</h3>
+                <p>Student Complaints</p>
+            </div>
+
+            <div class="stat-card-footer">
+                <span>Review complaints</span>
+                <i class="ti ti-arrow-up-right"></i>
+            </div>
+        </a>
+
+    </section>
+
+
+    <!-- Main Dashboard Grid -->
+    <section class="dashboard-main-grid">
+
+        <!-- Quick Actions -->
+        <div class="dashboard-panel">
+            <div class="panel-heading">
+                <div>
+                    <span class="section-eyebrow">SHORTCUTS</span>
+                    <h2>Quick Actions</h2>
+                </div>
+
+                <span class="panel-heading-icon">
+                    <i class="ti ti-bolt"></i>
+                </span>
+            </div>
+
+            <div class="quick-actions-grid">
+
+                <a href="{% url 'studentdata' %}" class="quick-action">
+                    <span class="quick-action-icon icon-student">
+                        <i class="ti ti-users"></i>
+                    </span>
+                    <span class="quick-action-text">
+                        <strong>Manage Students</strong>
+                        <small>View student records</small>
+                    </span>
+                    <i class="ti ti-chevron-right quick-arrow"></i>
+                </a>
+
+                <a href="{% url 'addmaterial' %}" class="quick-action">
+                    <span class="quick-action-icon icon-add">
+                        <i class="ti ti-file-plus"></i>
+                    </span>
+                    <span class="quick-action-text">
+                        <strong>Add Material</strong>
+                        <small>Upload learning resources</small>
+                    </span>
+                    <i class="ti ti-chevron-right quick-arrow"></i>
+                </a>
+
+                <a href="{% url 'viewmaterial' %}" class="quick-action">
+                    <span class="quick-action-icon icon-material">
+                        <i class="ti ti-book"></i>
+                    </span>
+                    <span class="quick-action-text">
+                        <strong>View Materials</strong>
+                        <small>Manage uploaded content</small>
+                    </span>
+                    <i class="ti ti-chevron-right quick-arrow"></i>
+                </a>
+
+                <a href="{% url 'viewfeedback' %}" class="quick-action">
+                    <span class="quick-action-icon icon-feedback">
+                        <i class="ti ti-message-circle"></i>
+                    </span>
+                    <span class="quick-action-text">
+                        <strong>Student Feedback</strong>
+                        <small>Read student responses</small>
+                    </span>
+                    <i class="ti ti-chevron-right quick-arrow"></i>
+                </a>
+
+            </div>
+        </div>
+
+
+        <!-- Administration Centre -->
+        <div class="dashboard-panel administration-panel">
+            <div class="panel-heading">
+                <div>
+                    <span class="section-eyebrow">MANAGEMENT</span>
+                    <h2>Administration Centre</h2>
+                </div>
+
+                <span class="panel-heading-icon">
+                    <i class="ti ti-settings"></i>
+                </span>
+            </div>
+
+            <div class="administration-list">
+
+                <a href="{% url 'viewenquiries' %}" class="administration-item">
+                    <span class="administration-icon">
+                        <i class="ti ti-message-circle"></i>
+                    </span>
+                    <span>
+                        <strong>Enquiries</strong>
+                        <small>Review incoming questions</small>
+                    </span>
+                    <i class="ti ti-arrow-up-right administration-arrow"></i>
+                </a>
+
+                <a href="{% url 'viewcomplaint' %}" class="administration-item">
+                    <span class="administration-icon">
+                        <i class="ti ti-clipboard-list"></i>
+                    </span>
+                    <span>
+                        <strong>Complaints</strong>
+                        <small>Review student concerns</small>
+                    </span>
+                    <i class="ti ti-arrow-up-right administration-arrow"></i>
+                </a>
+
+                <a href="{% url 'viewfeedback' %}" class="administration-item">
+                    <span class="administration-icon">
+                        <i class="ti ti-message-circle"></i>
+                    </span>
+                    <span>
+                        <strong>Feedback</strong>
+                        <small>Read submitted feedback</small>
+                    </span>
+                    <i class="ti ti-arrow-up-right administration-arrow"></i>
+                </a>
+
+                <a href="{% url 'changepassword' %}" class="administration-item">
+                    <span class="administration-icon">
+                        <i class="ti ti-lock"></i>
+                    </span>
+                    <span>
+                        <strong>Account Security</strong>
+                        <small>Change administrator password</small>
+                    </span>
+                    <i class="ti ti-arrow-up-right administration-arrow"></i>
+                </a>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Bottom Banner -->
+    <section class="dashboard-bottom-banner">
+        <div class="bottom-banner-icon">
+            <i class="ti ti-school"></i>
+        </div>
+
+        <div class="bottom-banner-content">
+            <h3>NOU E-Gyan Learning Management System</h3>
+            <p>
+                Your central workspace for managing the learning portal
+                and supporting students.
+            </p>
+        </div>
+
+        <a href="{% url 'index' %}" class="bottom-banner-link">
+            Visit Website
+            <i class="ti ti-arrow-up-right"></i>
+        </a>
+    </section>
+
 </div>
+
 {% endblock %}

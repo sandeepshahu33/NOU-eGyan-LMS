@@ -1,12 +1,229 @@
-{% extends 'studentbase.html' %} 
-{% load static %} 
+
+{% extends 'studentbase.html' %}
+{% load static %}
+
 {% block student %}
-<div class="container">
-    <div class="row bg-primary text-light p-3" style="border-radius: 20px">
-        <div class="col-sm-12">
-            <h3 class="text-light mb-0">NOU-LMS Student Panel</h3>
-            <p></p>
+
+<div class="student-dashboard ">
+<link rel="stylesheet"
+      href="{% static 'student/assets/css/studenthome.css' %}">
+    <!-- Welcome Banner -->
+    <section class="student-welcome ">
+        <div class="welcome-content">
+            <span class="welcome-label">
+                <i class="ti ti-school"></i>
+                NOU E-GYAN LMS
+            </span>
+
+            <h1>Welcome back, {{ stu.name|default:"Student" }}!</h1>
+
+            <p>
+                Your learning journey continues here.
+                Access your study materials and stay connected with your academics.
+            </p>
+
+            <div class="welcome-actions">
+                <a href="{% url 'viewmat' %}" class="student-btn student-btn-gold">
+                    <i class="ti ti-book-2"></i>
+                    Explore Study Materials
+                    <i class="ti ti-arrow-right"></i>
+                </a>
+
+                <a href="{% url 'giveresponse' %}" class="student-btn student-btn-outline">
+                    <i class="ti ti-message-circle"></i>
+                    Give Response
+                </a>
+            </div>
         </div>
-    </div>  
+
+        <div class="welcome-illustration">
+            <div class="illustration-circle">
+                <i class="ti ti-school"></i>
+            </div>
+            <span class="floating-icon floating-book">
+                <i class="ti ti-book-2"></i>
+            </span>
+            <span class="floating-icon floating-star">
+                <i class="ti ti-award"></i>
+            </span>
+        </div>
+    </section>
+
+
+    <!-- Student Profile Summary -->
+    <section class="student-profile-strip">
+        <div class="profile-avatar">
+    <i class="ti ti-user"></i>
 </div>
+
+        <div class="profile-details">
+            <span class="profile-caption">YOUR STUDENT PROFILE</span>
+            <h3>{{ stu.name|default:"Student" }}</h3>
+            <p>
+                Enrollment / Roll No:
+                <strong>{{ stu.rollno|default:"Not available" }}</strong>
+            </p>
+        </div>
+
+        <a href="{% url 'changepwd' %}" class="profile-security-btn">
+            <i class="ti ti-shield-lock"></i>
+            Account Security
+            <i class="ti ti-arrow-up-right"></i>
+        </a>
+    </section>
+
+
+    <!-- Section Heading -->
+    <div class="student-section-heading">
+        <div>
+            <span class="section-eyebrow">YOUR LEARNING SPACE</span>
+            <h2>Quick Access</h2>
+            <p>Everything you need for your academic activities.</p>
+        </div>
+    </div>
+
+
+    <!-- Quick Access Cards -->
+    <div class="student-feature-grid">
+
+        <!-- Study Materials -->
+        <article class="student-feature-card">
+            <div class="feature-top">
+                <div class="feature-icon icon-burgundy">
+    <i class="ti ti-book"></i>
+</div>
+                <span class="feature-number">01</span>
+            </div>
+
+            <h3>Study Materials</h3>
+            <p>
+                Access learning resources shared for your academic preparation.
+            </p>
+
+            <a href="{% url 'viewmat' %}" class="feature-link">
+                View Materials
+                <i class="ti ti-arrow-right"></i>
+            </a>
+        </article>
+
+
+        <!-- Discussion Forum -->
+        <article class="student-feature-card">
+            <div class="feature-top">
+                <div class="feature-icon icon-gold">
+                    <i class="ti ti-messages"></i>
+                </div>
+                <span class="feature-number">02</span>
+            </div>
+
+            <h3>Discussion Forum</h3>
+            <p>
+                Connect with the learning community and discuss academic topics.
+            </p>
+
+            <a href="#" class="feature-link">
+                Explore Discussions
+                <i class="ti ti-arrow-right"></i>
+            </a>
+
+            <span class="feature-note">Forum link can be connected when its URL is available.</span>
+        </article>
+
+
+        <!-- Give Response -->
+        <article class="student-feature-card">
+            <div class="feature-top">
+                <div class="feature-icon icon-ivory">
+                    <i class="ti ti-message-circle"></i>
+                </div>
+                <span class="feature-number">03</span>
+            </div>
+
+            <h3>Give Response</h3>
+            <p>
+                Share your feedback and submit your response through the portal.
+            </p>
+
+            <a href="{% url 'giveresponse' %}" class="feature-link">
+                Submit Response
+                <i class="ti ti-arrow-right"></i>
+            </a>
+        </article>
+
+    </div>
+
+
+    <!-- Bottom Section -->
+    <div class="student-bottom-grid">
+
+        <!-- Academic Information -->
+        <section class="student-info-card">
+            <div class="info-card-heading">
+                <div class="info-heading-icon">
+                    <i class="ti ti-school"></i>
+                </div>
+                <div>
+                    <h3>Academic Information</h3>
+                    <p>Your current academic details</p>
+                </div>
+            </div>
+
+            <div class="academic-info-row">
+                <span>
+                    <i class="ti ti-book"></i>
+                    Course
+                </span>
+                <strong>{{ stu.course|default:"Not assigned" }}</strong>
+            </div>
+
+            <div class="academic-info-row">
+                <span>
+                    <i class="ti ti-calendar"></i>
+                    Academic Session
+                </span>
+                <strong>{{ stu.session|default:"Not assigned" }}</strong>
+            </div>
+
+            <div class="academic-info-row">
+                <span>
+                    <i class="ti ti-layers-intersect"></i>
+                    Semester
+                </span>
+                <strong>{{ stu.semester|default:"Not assigned" }}</strong>
+            </div>
+        </section>
+
+
+        <!-- Account Security -->
+        <section class="student-security-card">
+            <div class="security-icon">
+                <i class="ti ti-shield-check"></i>
+            </div>
+
+            <span class="section-eyebrow">KEEP YOUR ACCOUNT SAFE</span>
+            <h3>Account Security</h3>
+
+            <p>
+                Keep your account secure by using a strong password.
+                Update your password whenever necessary.
+            </p>
+
+            <a href="{% url 'changepwd' %}" class="security-action">
+                Change Password
+                <i class="ti ti-arrow-up-right"></i>
+            </a>
+        </section>
+
+    </div>
+
+    <!-- Dashboard Footer Note -->
+    <div class="student-dashboard-note">
+        <i class="ti ti-info-circle"></i>
+        <span>
+            Stay consistent with your learning and check your study materials regularly.
+        </span>
+    </div>
+
+</div>
+
 {% endblock %}

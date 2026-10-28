@@ -1,0 +1,440 @@
+/* =====================================================
+   NOU e-GYAN LMS — STUDENT PANEL
+   Theme: Login Page Matching Maroon + Gold + White
+   ===================================================== */
+
+:root {
+    --student-maroon: #800020;
+    --student-dark: #520015;
+    --student-gold: #D6AD45;
+    --student-gold-light: #FFECC0;
+    --student-white: #FFFFFF;
+    --student-bg: #FFFFFF;
+    --student-text: #333333;
+    --student-muted: #81777A;
+    --student-border: #F0E8E0;
+}
+
+/* PAGE */
+
+body {
+    font-family: "Public Sans", sans-serif;
+    color: var(--student-text);
+    background: var(--student-white) !important;
+}
+
+.pc-container,
+.pc-content {
+    background: var(--student-white) !important;
+}
+
+.pc-content {
+    min-height: calc(100vh - 145px);
+    padding-top: 28px;
+    padding-bottom: 30px;
+}
+
+/* SIDEBAR */
+
+.pc-sidebar {
+    background: var(--student-maroon) !important;
+    border-right: none !important;
+    box-shadow: 4px 0 18px rgba(82, 0, 21, .10);
+}
+
+.pc-sidebar .navbar-wrapper,
+.pc-sidebar .navbar-content {
+    background: transparent !important;
+}
+
+.pc-sidebar .m-header {
+    min-height: 82px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    background: transparent !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .16);
+}
+
+.pc-sidebar .m-header .b-brand {
+    color: #FFFFFF !important;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    text-decoration: none;
+}
+
+.pc-sidebar .m-header .b-brand::before {
+    content: "N";
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+    color: var(--student-dark);
+    background: var(--student-gold);
+    border-radius: 10px;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+/* SIDEBAR SECTION LABELS */
+
+.pc-sidebar .pc-caption {
+    padding: 21px 14px 10px !important;
+    color: var(--student-gold-light) !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.pc-sidebar .pc-caption label {
+    color: inherit !important;
+}
+
+/* MENU LINKS */
+
+.pc-sidebar .pc-item {
+    margin-bottom: 5px;
+}
+
+.pc-sidebar .pc-link {
+    min-height: 46px;
+    padding: 12px 14px !important;
+    color: #FFFFFF !important;
+    background: transparent !important;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background .25s ease, color .25s ease;
+}
+
+.pc-sidebar .pc-link .pc-micon {
+    margin-right: 11px;
+    color: var(--student-gold) !important;
+    font-size: 19px;
+}
+
+.pc-sidebar .pc-link .pc-mtext {
+    color: inherit !important;
+}
+
+.pc-sidebar .pc-link .pc-arrow {
+    color: var(--student-gold-light) !important;
+}
+
+/* HOVER */
+
+.pc-sidebar .pc-link:hover {
+    color: #FFFFFF !important;
+    background: var(--student-dark) !important;
+}
+
+.pc-sidebar .pc-link:hover .pc-micon {
+    color: var(--student-gold-light) !important;
+}
+
+/* ACTIVE MENU */
+
+.pc-sidebar .pc-item.active > .pc-link,
+.pc-sidebar .pc-item > .pc-link.active {
+    color: var(--student-dark) !important;
+    background: var(--student-gold) !important;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .10);
+}
+
+.pc-sidebar .pc-item.active > .pc-link .pc-micon,
+.pc-sidebar .pc-item > .pc-link.active .pc-micon {
+    color: var(--student-dark) !important;
+}
+
+/* SUBMENU */
+
+.pc-sidebar .pc-submenu {
+    padding: 6px 0 5px 15px !important;
+    background: transparent !important;
+}
+
+.pc-sidebar .pc-submenu .pc-link {
+    min-height: 40px;
+    padding: 10px 12px !important;
+    border-left: 2px solid rgba(214, 173, 69, .55);
+    border-radius: 0 8px 8px 0;
+    font-size: 12px;
+}
+
+.pc-sidebar .pc-submenu .pc-link:hover,
+.pc-sidebar .pc-submenu .pc-item.active > .pc-link {
+    color: var(--student-gold-light) !important;
+    background: var(--student-dark) !important;
+}
+
+/* TOP HEADER */
+
+.pc-header {
+    background: #FFFFFF !important;
+    border-bottom: 1px solid var(--student-border) !important;
+    box-shadow: 0 3px 16px rgba(82, 0, 21, .04);
+}
+
+.pc-header .header-wrapper {
+    min-height: 76px;
+    padding: 12px 26px;
+}
+
+.pc-header .pc-head-link {
+    color: var(--student-maroon) !important;
+    border-radius: 9px;
+}
+
+.pc-header .pc-head-link:hover {
+    background: #FFF5DF !important;
+}
+
+.pc-header .user-avtar {
+    border: 2px solid var(--student-gold);
+    object-fit: cover;
+}
+
+.pc-header .header-user-profile > a {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--student-maroon) !important;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* SEARCH */
+
+.pc-header .header-search {
+    padding: 3px 10px;
+    background: #FFFFFF !important;
+    border: 1px solid var(--student-border) !important;
+    border-radius: 9px;
+}
+
+.pc-header .header-search .form-control {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* PROFILE DROPDOWN */
+
+.pc-header .dropdown-menu {
+    padding: 8px !important;
+    background: #FFFFFF;
+    border: 1px solid var(--student-border) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 12px 32px rgba(82, 0, 21, .12) !important;
+}
+
+.pc-header .dropdown-header {
+    background: #FFF5DF;
+    border-radius: 9px;
+}
+
+.pc-header .dropdown-header h6 {
+    color: var(--student-maroon);
+}
+
+.pc-header .dropdown-item {
+    border-radius: 7px;
+}
+
+.pc-header .dropdown-item:hover {
+    color: var(--student-maroon) !important;
+    background: #FFF5DF !important;
+}
+
+/* CONTENT CARDS */
+
+.pc-content .card {
+    background: #FFFFFF;
+    border: 1px solid var(--student-border) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 5px 20px rgba(82, 0, 21, .045);
+    overflow: hidden;
+}
+
+.pc-content .card-header {
+    padding: 18px 21px;
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--student-border);
+}
+
+.pc-content .card-header h4,
+.pc-content .card-header h5,
+.pc-content h1,
+.pc-content h2,
+.pc-content h3,
+.pc-content h4,
+.pc-content h5,
+.pc-content h6 {
+    color: var(--student-maroon);
+    font-weight: 700;
+}
+
+.pc-content .card-body {
+    padding: 22px;
+}
+
+.pc-content .text-muted {
+    color: var(--student-muted) !important;
+}
+
+/* BUTTONS */
+
+.pc-content .btn-primary {
+    color: #FFFFFF !important;
+    background: var(--student-maroon) !important;
+    border: 1px solid var(--student-maroon) !important;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all .25s ease;
+}
+
+.pc-content .btn-primary:hover {
+    color: var(--student-dark) !important;
+    background: var(--student-gold) !important;
+    border-color: var(--student-gold) !important;
+    transform: translateY(-1px);
+}
+
+.pc-content .btn-outline-primary {
+    color: var(--student-maroon) !important;
+    background: #FFFFFF !important;
+    border: 1px solid var(--student-maroon) !important;
+    border-radius: 8px;
+}
+
+.pc-content .btn-outline-primary:hover {
+    color: #FFFFFF !important;
+    background: var(--student-maroon) !important;
+}
+
+/* FORMS */
+
+.pc-content .form-control,
+.pc-content .form-select {
+    min-height: 43px;
+    color: var(--student-text);
+    background: #FFFFFF;
+    border: 1px solid #E9E0DC;
+    border-radius: 9px;
+    box-shadow: none;
+}
+
+.pc-content .form-control:focus,
+.pc-content .form-select:focus {
+    border-color: var(--student-gold);
+    box-shadow: 0 0 0 3px rgba(214, 173, 69, .18);
+}
+
+.pc-content label {
+    margin-bottom: 7px;
+    color: var(--student-dark);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* TABLES */
+
+.pc-content .table {
+    color: var(--student-text);
+    vertical-align: middle;
+}
+
+.pc-content .table thead th {
+    color: var(--student-dark);
+    background: #FFF5DF;
+    border-bottom: 1px solid #E8D29C;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.pc-content .table td {
+    padding: 13px 12px;
+    border-color: #F0E8E0;
+    font-size: 13px;
+}
+
+.pc-content .table tbody tr:hover {
+    background: #FFFCF6;
+}
+
+/* PAGINATION */
+
+.pc-content .page-link {
+    color: var(--student-maroon);
+    border-color: var(--student-border);
+}
+
+.pc-content .page-item.active .page-link {
+    color: #FFFFFF;
+    background: var(--student-maroon);
+    border-color: var(--student-maroon);
+}
+
+/* FOOTER */
+
+.pc-footer {
+    background: #FFFFFF !important;
+    border-top: 1px solid var(--student-border);
+    color: var(--student-muted);
+}
+
+.pc-footer a {
+    color: var(--student-maroon);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.pc-footer a:hover {
+    color: #A77A16;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 991px) {
+    .pc-header .header-wrapper {
+        padding: 10px 16px;
+    }
+
+    .pc-content {
+        padding: 20px 15px;
+    }
+
+    .pc-content .card-body {
+        padding: 17px;
+    }
+}
+
+@media (max-width: 575px) {
+    .pc-sidebar .m-header {
+        min-height: 72px;
+        padding: 16px 19px;
+    }
+
+    .pc-header .header-wrapper {
+        min-height: 65px;
+        padding: 8px 12px;
+    }
+
+    .pc-content {
+        padding: 14px 10px 20px;
+    }
+
+    .pc-content .card-header {
+        padding: 14px 15px;
+    }
+
+    .pc-content .card-body {
+        padding: 15px;
+    }
+}

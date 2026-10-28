@@ -1,0 +1,542 @@
+
+/* =====================================================
+   NOU E-GYAN LMS — ADD STUDY MATERIAL
+   Theme: Burgundy + Gold + Ivory
+   ===================================================== */
+
+.material-page {
+    --material-primary: #762640;
+    --material-primary-dark: #54182d;
+    --material-primary-light: #8d3452;
+    --material-gold: #c49a43;
+    --material-ivory: #f8efd9;
+    --material-bg: #fbf4f6;
+    --material-border: #eadde2;
+    --material-text: #382630;
+    --material-muted: #82727b;
+
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 25px 20px 35px;
+    color: var(--material-text);
+    box-sizing: border-box;
+    font-family: "Outfit", "Segoe UI", sans-serif;
+}
+
+.material-page *,
+.material-page *::before,
+.material-page *::after {
+    box-sizing: border-box;
+}
+
+/* Header */
+
+.material-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 27px 30px;
+    margin-bottom: 25px;
+    color: #fff;
+    background: linear-gradient(
+        120deg,
+        var(--material-primary-dark),
+        var(--material-primary),
+        var(--material-primary-light)
+    );
+    border-radius: 18px;
+    box-shadow: 0 9px 24px rgba(84, 24, 45, 0.13);
+    position: relative;
+    overflow: hidden;
+}
+
+.material-header::after {
+    content: "";
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    right: 100px;
+    top: -115px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    box-shadow: 0 0 0 25px rgba(255, 255, 255, 0.035),
+                0 0 0 50px rgba(255, 255, 255, 0.025);
+    pointer-events: none;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    position: relative;
+    z-index: 1;
+}
+
+.header-icon {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    color: var(--material-gold);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    font-size: 30px;
+}
+
+.header-subtitle {
+    display: block;
+    margin-bottom: 5px;
+    color: #e6c77f;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.material-header h2 {
+    margin: 0 0 6px;
+    color: #fff;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.material-header p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 13px;
+}
+
+.header-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 15px;
+    white-space: nowrap;
+    border-radius: 10px;
+    color: #f4dda6;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    font-size: 12px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+/* Main Card */
+
+.material-card {
+    padding: 30px;
+    background: #fff;
+    border: 1px solid var(--material-border);
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(84, 24, 45, 0.055);
+}
+
+.card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 23px;
+    margin-bottom: 27px;
+    border-bottom: 1px solid #f0e6e9;
+}
+
+.card-heading h4 {
+    margin: 0 0 7px;
+    color: var(--material-primary-dark);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.card-heading p {
+    margin: 0;
+    color: var(--material-muted);
+    font-size: 13px;
+}
+
+.required-note {
+    color: var(--material-muted);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.required-note span,
+.form-field label span {
+    color: #c0394b;
+    font-weight: 700;
+}
+
+/* Form Sections */
+
+.form-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 22px;
+}
+
+.section-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    color: var(--material-primary);
+    background: var(--material-bg);
+    border: 1px solid var(--material-border);
+    font-size: 22px;
+}
+
+.section-title h5 {
+    margin: 0 0 5px;
+    color: var(--material-text);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.section-title p {
+    margin: 0;
+    color: var(--material-muted);
+    font-size: 12px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 25px;
+    padding-left: 57px;
+}
+
+.form-field {
+    min-width: 0;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--material-text);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.material-page .form-control {
+    width: 100%;
+    min-height: 47px;
+    padding: 11px 14px;
+    color: var(--material-text);
+    background-color: #fff;
+    border: 1px solid #e5d9de;
+    border-radius: 9px;
+    outline: none;
+    box-shadow: none;
+    font-family: inherit;
+    font-size: 13px;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease,
+                background-color 0.2s ease;
+}
+
+.material-page select.form-control {
+    cursor: pointer;
+}
+
+.material-page .form-control::placeholder {
+    color: #ad9da5;
+}
+
+.material-page .form-control:focus {
+    border-color: var(--material-primary-light);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(118, 38, 64, 0.09);
+}
+
+/* Upload Box */
+
+.upload-section {
+    margin-bottom: 28px;
+}
+
+.upload-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 115px;
+    margin-left: 57px;
+    padding: 23px;
+    border: 1.5px dashed #d7bdc7;
+    border-radius: 13px;
+    background: #fdf9fa;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.upload-box:hover {
+    border-color: var(--material-primary);
+    background: var(--material-bg);
+}
+
+.upload-icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--material-primary);
+    background: #f3e5eb;
+    border-radius: 13px;
+    font-size: 27px;
+}
+
+.upload-text {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.upload-text strong {
+    color: var(--material-primary-dark);
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.upload-text small {
+    color: var(--material-muted);
+    font-size: 12px;
+}
+
+.browse-btn {
+    flex-shrink: 0;
+    padding: 10px 15px;
+    color: var(--material-primary);
+    background: #fff;
+    border: 1px solid var(--material-border);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.upload-box input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* Form Actions */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    padding-top: 23px;
+    border-top: 1px solid #f0e6e9;
+}
+
+.form-actions a,
+.form-actions button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 11px 18px;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-cancel {
+    color: var(--material-muted);
+    background: #fff;
+    border: 1px solid var(--material-border);
+}
+
+.btn-cancel:hover {
+    color: var(--material-primary);
+    background: var(--material-bg);
+}
+
+.btn-reset {
+    color: var(--material-primary);
+    background: #f7edf1;
+    border: 1px solid #ead5de;
+}
+
+.btn-reset:hover {
+    color: #fff;
+    background: var(--material-primary-light);
+}
+
+.btn-submit {
+    color: #fff;
+    background: var(--material-primary);
+    border: 1px solid var(--material-primary);
+    box-shadow: 0 4px 10px rgba(118, 38, 64, 0.15);
+}
+
+.btn-submit:hover {
+    background: var(--material-primary-dark);
+    border-color: var(--material-primary-dark);
+    transform: translateY(-1px);
+}
+
+/* Bottom Note */
+
+.material-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 17px;
+    padding: 14px 17px;
+    color: #78613a;
+    background: #fffaf0;
+    border: 1px solid #f0e3c4;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.material-note i {
+    margin-top: 1px;
+    color: #b18a36;
+    font-size: 17px;
+}
+
+.material-note p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .material-page {
+        padding: 16px 12px 25px;
+    }
+
+    .material-header {
+        align-items: flex-start;
+        padding: 22px 18px;
+    }
+
+    .header-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+    }
+
+    .material-header h2 {
+        font-size: 22px;
+    }
+
+    .header-badge {
+        display: none;
+    }
+
+    .material-card {
+        padding: 22px 18px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        padding-left: 0;
+        gap: 18px;
+    }
+
+    .upload-box {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .material-header {
+        padding: 19px 15px;
+        border-radius: 13px;
+    }
+
+    .header-content {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .header-subtitle {
+        font-size: 9px;
+        letter-spacing: 1.4px;
+    }
+
+    .material-header h2 {
+        font-size: 19px;
+    }
+
+    .material-header p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .material-card {
+        padding: 18px 14px;
+        border-radius: 13px;
+    }
+
+    .card-heading {
+        flex-direction: column;
+    }
+
+    .section-title {
+        align-items: flex-start;
+    }
+
+    .section-icon {
+        width: 39px;
+        height: 39px;
+        font-size: 19px;
+    }
+
+    .upload-box {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .upload-icon {
+        width: 43px;
+        height: 43px;
+        font-size: 22px;
+    }
+
+    .browse-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .form-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .form-actions a,
+    .form-actions button {
+        flex: 1;
+        padding: 10px 12px;
+    }
+}

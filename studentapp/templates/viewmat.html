@@ -1,43 +1,222 @@
+
 {% extends 'studentbase.html' %}
 {% load static %}
+
 {% block student %}
-<div class="container">
-    <div class="row bg-primary text-light p-3" style="border-radius: 20px">
-        <div class="col-sm-12">
-            <h3 class="text-light mb-0">View Study Material</h3>
+
+<link rel="stylesheet" href="{% static 'student/assets/css/viewmat.css' %}">
+
+<div class="study-material-page">
+
+    <!-- Page Header -->
+    <div class="material-header">
+        <div class="header-content">
+            <div class="header-icon">
+                <i class="fas fa-book-open"></i>
+            </div>
+
+            <div>
+                <span class="header-subtitle">LEARNING RESOURCES</span>
+                <h2>Study Materials</h2>
+                <p>Access and download your academic resources.</p>
+            </div>
+        </div>
+
+        <div class="header-decoration">
+            <i class="fas fa-graduation-cap"></i>
         </div>
     </div>
-    <div class="row mt-3">
-        <div class="col-sm-12">
-            <table class="table table-bordered" style="margin: auto;width: 80%;">
-                <tr>
-                    <th>Sr. No</th>
-                    <th>Subject</th>
-                    <th>Material Type</th>
-                    <th>Topic</th>
-                </tr>
 
-                {% for m in smat %}
-                <tr>
-                    <td>{{forloop.counter}}</td>
-                    <td>{{m.subject}}</td>
-                    <!-- <td>{{m.materialtype}}</td> -->
-                    <td>
-                        
-                        {% if m.materialtype == 'smat' %}
-                        Study Material
-                        {% else %}
-                        Assignment
-                        {% endif %}
-                            
-                    </td>
-                    <td>
-                        <a download href="{{m.myfile.url}}">{{m.filename}}</a>
-                    </td>
-                </tr>
-                {% endfor %}
+    <!-- Information Cards -->
+    <div class="material-stats">
+
+        <div class="stat-card">
+            <div class="stat-icon burgundy-icon">
+                <i class="fas fa-folder-open"></i>
+            </div>
+            <div>
+                <span>Total Resources</span>
+                <h3>{{ smat|length }}</h3>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon gold-icon">
+                <i class="fas fa-file-download"></i>
+            </div>
+            <div>
+                <span>Available Downloads</span>
+                <h3>{{ smat|length }}</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Materials Section -->
+    <div class="materials-panel">
+
+        <div class="panel-heading">
+            <div>
+                <h4>Academic Resources</h4>
+                <p>Find your subject materials and assignments below.</p>
+            </div>
+
+            <div class="resource-label">
+                <i class="fas fa-bookmark"></i>
+                My Resources
+            </div>
+        </div>
+
+        <!-- Search -->
+        <div class="material-search">
+            <i class="fas fa-search"></i>
+            <input
+                type="text"
+                id="materialSearch"
+                placeholder="Search by subject, topic or material type..."
+                autocomplete="off"
+            >
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive">
+            <table class="materials-table" id="materialsTable">
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Subject</th>
+                        <th>Material Type</th>
+                        <th>Topic / File</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="materialTableBody">
+
+                    {% for m in smat %}
+                    <tr class="material-row">
+
+                        <td>
+                            <span class="serial-number">
+                                {{ forloop.counter }}
+                            </span>
+                        </td>
+
+                        <td>
+                            <div class="subject-info">
+                                <span class="subject-icon">
+                                    <i class="fas fa-book"></i>
+                                </span>
+                                <span class="subject-name">{{ m.subject }}</span>
+                            </div>
+                        </td>
+
+                        <td>
+                            {% if m.materialtype == 'smat' %}
+                                <span class="type-badge study-badge">
+                                    <i class="fas fa-book-open"></i>
+                                    Study Material
+                                </span>
+                            {% else %}
+                                <span class="type-badge assignment-badge">
+                                    <i class="fas fa-file-alt"></i>
+                                    Assignment
+                                </span>
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            <div class="file-info">
+                                <i class="fas fa-file-alt"></i>
+                                <span>{{ m.filename }}</span>
+                            </div>
+                        </td>
+
+                        <td>
+                            <a
+                                href="{{ m.myfile.url }}"
+                                download
+                                class="download-btn"
+                                title="Download {{ m.filename }}"
+                            >
+                                <i class="fas fa-download"></i>
+                                <span>Download</span>
+                            </a>
+                        </td>
+
+                    </tr>
+
+                    {% empty %}
+                    <tr>
+                        <td colspan="5">
+                            <div class="empty-state">
+                                <div class="empty-icon">
+                                    <i class="fas fa-folder-open"></i>
+                                </div>
+                                <h4>No Study Materials Available</h4>
+                                <p>Your study materials and assignments will appear here when available.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+                    <!-- Search Empty State -->
+                    <tr id="searchEmpty" style="display: none;">
+                        <td colspan="5">
+                            <div class="empty-state">
+                                <div class="empty-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <h4>No Matching Resources</h4>
+                                <p>Try searching with another subject, topic or material type.</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
             </table>
         </div>
+
+        <div class="panel-footer">
+            <span>
+                <i class="fas fa-shield-alt"></i>
+                Your academic resources in one place
+            </span>
+
+            <span class="footer-note">NOU E-Gyan LMS</span>
+        </div>
+
     </div>
+
 </div>
+
+<script>
+    const materialSearch = document.getElementById("materialSearch");
+    const materialRows = document.querySelectorAll(
+        "#materialTableBody .material-row"
+    );
+    const searchEmpty = document.getElementById("searchEmpty");
+
+    materialSearch.addEventListener("input", function () {
+        const searchValue = this.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        materialRows.forEach(function (row) {
+            const rowText = row.innerText.toLowerCase();
+            const isMatch = rowText.includes(searchValue);
+
+            row.style.display = isMatch ? "" : "none";
+
+            if (isMatch) {
+                visibleCount++;
+            }
+        });
+
+        searchEmpty.style.display =
+            visibleCount === 0 && materialRows.length > 0
+                ? ""
+                : "none";
+    });
+</script>
+
 {% endblock %}

@@ -1,0 +1,853 @@
+
+/* =========================================================
+   NOU E-GYAN LMS — ADMIN THEME
+   Theme: Burgundy + Champagne Gold + Warm Ivory + White
+   Compatible with existing PCoded admin layout
+   ========================================================= */
+
+/* ---------- 1. Theme Variables ---------- */
+
+:root {
+    --admin-primary: #762640;
+    --admin-primary-dark: #54182D;
+    --admin-primary-light: #8D3452;
+
+    --admin-gold: #C49A43;
+    --admin-gold-light: #E7D4A0;
+
+    --admin-ivory: #F8F3ED;
+    --admin-white: #FFFFFF;
+
+    --admin-text: #382630;
+    --admin-muted: #81717A;
+
+    --admin-border: #E9DDE0;
+    --admin-hover: #FBF4F6;
+
+    --admin-sidebar-width: 260px;
+
+    --admin-radius: 12px;
+    --admin-shadow: 0 4px 20px rgba(84, 24, 45, 0.06);
+    --admin-transition: all 0.25s ease;
+}
+
+
+/* ---------- 2. Global Layout ---------- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Public Sans", sans-serif !important;
+    background: var(--admin-ivory) !important;
+    color: var(--admin-text);
+    font-size: 14px;
+}
+
+a {
+    transition: var(--admin-transition);
+}
+
+::selection {
+    background: var(--admin-primary);
+    color: var(--admin-white);
+}
+
+
+/* ---------- 3. Sidebar ---------- */
+
+.pc-sidebar {
+    background: var(--admin-primary-dark) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 5px 0 25px rgba(48, 12, 25, 0.08);
+}
+
+.pc-sidebar .navbar-wrapper {
+    background: transparent !important;
+}
+
+/* Logo section */
+
+.pc-sidebar .m-header {
+    height: 78px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    background: var(--admin-primary-dark) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.pc-sidebar .admin-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    color: var(--admin-white) !important;
+    text-decoration: none;
+}
+
+.brand-icon {
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--admin-gold);
+    color: var(--admin-primary-dark);
+    font-size: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.brand-text strong {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+.brand-text small {
+    font-size: 9px;
+    letter-spacing: 1.1px;
+    font-weight: 600;
+    color: var(--admin-gold-light);
+    white-space: nowrap;
+}
+
+/* Sidebar scroll area */
+
+.pc-sidebar .navbar-content {
+    padding: 18px 12px 25px;
+}
+
+/* Menu captions */
+
+.pc-sidebar .pc-caption {
+    padding: 22px 14px 10px !important;
+    color: var(--admin-gold-light) !important;
+    opacity: 1 !important;
+}
+
+.pc-sidebar .pc-caption label {
+    color: var(--admin-gold-light) !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.5px;
+}
+
+.pc-sidebar .pc-caption i {
+    color: var(--admin-gold) !important;
+}
+
+/* Menu spacing */
+
+.pc-sidebar .pc-navbar {
+    padding: 0;
+}
+
+.pc-sidebar .pc-item {
+    margin-bottom: 5px;
+}
+
+.pc-sidebar .pc-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 47px;
+    padding: 11px 13px !important;
+    border-radius: 9px;
+    color: #F5EAF0 !important;
+    font-size: 13px;
+    font-weight: 500;
+    background: transparent !important;
+    transition: var(--admin-transition);
+}
+
+/* Menu icons */
+
+.pc-sidebar .pc-micon {
+    width: 23px;
+    min-width: 23px;
+    height: 23px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    color: #D9BCC8 !important;
+    font-size: 19px !important;
+    transition: var(--admin-transition);
+}
+
+.pc-sidebar .pc-mtext {
+    flex: 1;
+    color: inherit !important;
+}
+
+/* Hover effect */
+
+.pc-sidebar .pc-link:hover {
+    color: #FFFFFF !important;
+    background: rgba(255, 255, 255, 0.09) !important;
+    transform: translateX(2px);
+}
+
+.pc-sidebar .pc-link:hover .pc-micon {
+    color: var(--admin-gold-light) !important;
+}
+
+/* Active menu: works when template adds active class */
+
+.pc-sidebar .pc-item.active > .pc-link,
+.pc-sidebar .pc-link.active {
+    background: var(--admin-primary) !important;
+    color: #FFFFFF !important;
+    box-shadow: inset 3px 0 0 var(--admin-gold);
+}
+
+.pc-sidebar .pc-item.active > .pc-link .pc-micon,
+.pc-sidebar .pc-link.active .pc-micon {
+    color: var(--admin-gold-light) !important;
+}
+
+/* Submenus */
+
+.pc-sidebar .pc-submenu {
+    padding: 5px 0 5px 18px !important;
+    margin-top: 3px;
+    background: transparent !important;
+}
+
+.pc-sidebar .pc-submenu .pc-item {
+    margin-bottom: 3px;
+}
+
+.pc-sidebar .pc-submenu .pc-link {
+    min-height: 39px;
+    padding: 9px 12px !important;
+    font-size: 12px;
+    color: #DCC9D1 !important;
+    border-radius: 7px;
+}
+
+.pc-sidebar .pc-submenu .pc-link::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--admin-gold);
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+
+.pc-sidebar .pc-submenu .pc-link:hover,
+.pc-sidebar .pc-submenu .pc-link.active {
+    background: rgba(255, 255, 255, 0.09) !important;
+    color: #FFFFFF !important;
+}
+
+.pc-sidebar .pc-arrow {
+    color: #D9BCC8 !important;
+}
+
+
+/* ---------- 4. Header ---------- */
+
+.pc-header {
+    background: rgba(255, 255, 255, 0.97) !important;
+    border-bottom: 1px solid var(--admin-border) !important;
+    box-shadow: 0 3px 16px rgba(84, 24, 45, 0.035);
+    backdrop-filter: blur(12px);
+}
+
+.pc-header .header-wrapper {
+    min-height: 75px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.pc-header .pc-head-link {
+    color: var(--admin-primary-dark) !important;
+    transition: var(--admin-transition);
+}
+
+.pc-header .pc-head-link:hover {
+    color: var(--admin-primary) !important;
+}
+
+/* Sidebar toggle buttons */
+
+.pc-header #sidebar-hide,
+.pc-header #mobile-collapse {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: var(--admin-hover);
+    border: 1px solid var(--admin-border);
+}
+
+.pc-header #sidebar-hide:hover,
+.pc-header #mobile-collapse:hover {
+    background: var(--admin-primary);
+    color: #FFFFFF !important;
+}
+
+
+/* ---------- 5. Search Bar ---------- */
+
+.pc-header .header-search {
+    position: relative;
+    width: 290px;
+    max-width: 100%;
+}
+
+.pc-header .header-search .form-control {
+    height: 43px;
+    padding: 10px 14px 10px 42px;
+    border: 1px solid var(--admin-border) !important;
+    border-radius: 10px !important;
+    background: #FAF8F7 !important;
+    color: var(--admin-text);
+    font-size: 13px;
+    box-shadow: none !important;
+}
+
+.pc-header .header-search .form-control::placeholder {
+    color: #A2949B;
+}
+
+.pc-header .header-search .form-control:focus {
+    border-color: var(--admin-gold) !important;
+    background: #FFFFFF !important;
+}
+
+.pc-header .header-search .icon-search {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: var(--admin-muted);
+    pointer-events: none;
+}
+
+
+/* ---------- 6. Admin Profile ---------- */
+
+.admin-profile-trigger {
+    min-height: 48px;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 12px !important;
+    border: 1px solid var(--admin-border);
+    border-radius: 12px !important;
+    background: #FFFFFF !important;
+    text-decoration: none;
+}
+
+.admin-profile-trigger:hover {
+    background: var(--admin-hover) !important;
+    border-color: var(--admin-gold);
+}
+
+.admin-avatar {
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: var(--admin-primary);
+    color: #FFFFFF;
+    font-size: 23px;
+}
+
+.admin-profile-label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+.admin-profile-label strong {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--admin-primary-dark);
+}
+
+.admin-profile-label small {
+    font-size: 10px;
+    color: var(--admin-muted);
+}
+
+.profile-chevron {
+    margin-left: 3px;
+    color: var(--admin-muted);
+    font-size: 14px;
+}
+
+/* Profile dropdown */
+
+.pc-header .dropdown-user-profile {
+    min-width: 245px;
+    overflow: hidden;
+    padding: 0;
+    margin-top: 10px !important;
+    border: 1px solid var(--admin-border);
+    border-radius: 14px;
+    background: #FFFFFF;
+    box-shadow: 0 12px 35px rgba(84, 24, 45, 0.13);
+}
+
+.admin-dropdown-header {
+    padding: 20px !important;
+    background: var(--admin-hover);
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-avatar-large {
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+}
+
+.admin-dropdown-header h6 {
+    color: var(--admin-primary-dark);
+    font-weight: 700;
+}
+
+.admin-dropdown-header span:not(.admin-avatar) {
+    font-size: 12px;
+    color: var(--admin-muted);
+    overflow-wrap: anywhere;
+}
+
+.pc-header .dropdown-user-profile .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 12px 18px;
+    color: var(--admin-text);
+    font-size: 13px;
+}
+
+.pc-header .dropdown-user-profile .dropdown-item i {
+    font-size: 18px;
+    color: var(--admin-primary);
+}
+
+.pc-header .dropdown-user-profile .dropdown-item:hover {
+    background: var(--admin-hover);
+    color: var(--admin-primary);
+}
+
+
+/* ---------- 7. Main Content ---------- */
+
+.pc-container {
+    background: var(--admin-ivory) !important;
+}
+
+.pc-container .pc-content {
+    padding-top: 28px;
+    padding-bottom: 30px;
+}
+
+/* Page headings */
+
+.pc-content h1,
+.pc-content h2,
+.pc-content h3,
+.pc-content h4,
+.pc-content h5,
+.pc-content h6 {
+    color: var(--admin-primary-dark);
+    font-weight: 700;
+}
+
+.pc-content .page-title,
+.pc-content .breadcrumb-item.active {
+    color: var(--admin-primary-dark);
+}
+
+/* Breadcrumbs */
+
+.pc-content .breadcrumb {
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.pc-content .breadcrumb a {
+    color: var(--admin-primary);
+    text-decoration: none;
+}
+
+.pc-content .breadcrumb a:hover {
+    color: var(--admin-gold);
+}
+
+
+/* ---------- 8. Shared Cards ---------- */
+
+.pc-content .card {
+    overflow: hidden;
+    border: 1px solid rgba(233, 221, 224, 0.9) !important;
+    border-radius: var(--admin-radius) !important;
+    background: #FFFFFF;
+    box-shadow: var(--admin-shadow);
+    transition: var(--admin-transition);
+}
+
+.pc-content .card-header {
+    padding: 18px 22px;
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.pc-content .card-body {
+    padding: 22px;
+}
+
+.pc-content .card-title {
+    margin-bottom: 0;
+    color: var(--admin-primary-dark);
+    font-weight: 700;
+}
+
+.pc-content .card-footer {
+    background: #FCF9F7;
+    border-top: 1px solid var(--admin-border);
+}
+
+
+/* ---------- 9. Buttons ---------- */
+
+.pc-content .btn-primary {
+    color: #FFFFFF !important;
+    background: var(--admin-primary) !important;
+    border-color: var(--admin-primary) !important;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(118, 38, 64, 0.12);
+    transition: var(--admin-transition);
+}
+
+.pc-content .btn-primary:hover,
+.pc-content .btn-primary:focus {
+    background: var(--admin-primary-dark) !important;
+    border-color: var(--admin-primary-dark) !important;
+    transform: translateY(-1px);
+}
+
+.pc-content .btn-warning {
+    color: var(--admin-primary-dark) !important;
+    background: var(--admin-gold) !important;
+    border-color: var(--admin-gold) !important;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.pc-content .btn-warning:hover {
+    background: #D2AA55 !important;
+    border-color: #D2AA55 !important;
+}
+
+.pc-content .btn-outline-primary {
+    color: var(--admin-primary) !important;
+    border-color: var(--admin-primary) !important;
+    border-radius: 8px;
+}
+
+.pc-content .btn-outline-primary:hover {
+    color: #FFFFFF !important;
+    background: var(--admin-primary) !important;
+}
+
+
+/* ---------- 10. Form Controls ---------- */
+
+.pc-content .form-control,
+.pc-content .form-select {
+    min-height: 43px;
+    border: 1px solid #E3D5D9 !important;
+    border-radius: 8px !important;
+    background-color: #FFFFFF;
+    color: var(--admin-text);
+    font-size: 13px;
+    box-shadow: none !important;
+    transition: var(--admin-transition);
+}
+
+.pc-content textarea.form-control {
+    min-height: 100px;
+}
+
+.pc-content .form-control:focus,
+.pc-content .form-select:focus {
+    border-color: var(--admin-gold) !important;
+    box-shadow: 0 0 0 3px rgba(196, 154, 67, 0.13) !important;
+}
+
+.pc-content label,
+.pc-content .form-label {
+    color: var(--admin-primary-dark);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.pc-content .form-text {
+    color: var(--admin-muted);
+}
+
+
+/* ---------- 11. Tables ---------- */
+
+.pc-content .table-responsive {
+    border-radius: 9px;
+}
+
+.pc-content .table {
+    margin-bottom: 0;
+    color: var(--admin-text);
+    vertical-align: middle;
+}
+
+.pc-content .table thead th {
+    padding: 14px 16px;
+    background: #F8EFF2;
+    color: var(--admin-primary-dark);
+    border-bottom: 1px solid var(--admin-border);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.35px;
+    white-space: nowrap;
+}
+
+.pc-content .table tbody td {
+    padding: 13px 16px;
+    border-color: #F0E8EA;
+    font-size: 13px;
+}
+
+.pc-content .table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.pc-content .table tbody tr:hover > * {
+    background-color: #FCF7F8;
+}
+
+.pc-content .table .btn {
+    margin: 2px;
+}
+
+
+/* ---------- 12. Badges ---------- */
+
+.pc-content .badge {
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.pc-content .bg-primary {
+    background: var(--admin-primary) !important;
+}
+
+.pc-content .bg-warning {
+    color: var(--admin-primary-dark) !important;
+    background: var(--admin-gold-light) !important;
+}
+
+
+/* ---------- 13. Pagination ---------- */
+
+.pc-content .pagination {
+    gap: 4px;
+}
+
+.pc-content .page-link {
+    color: var(--admin-primary);
+    border-color: var(--admin-border);
+    border-radius: 6px;
+}
+
+.pc-content .page-link:hover {
+    color: var(--admin-primary-dark);
+    background: var(--admin-hover);
+}
+
+.pc-content .page-item.active .page-link {
+    color: #FFFFFF;
+    background: var(--admin-primary);
+    border-color: var(--admin-primary);
+}
+
+
+/* ---------- 14. Alerts ---------- */
+
+.pc-content .alert {
+    border-radius: 9px;
+    border-width: 1px;
+}
+
+
+/* ---------- 15. Footer ---------- */
+
+.pc-footer {
+    background: #FFFFFF !important;
+    border-top: 1px solid var(--admin-border) !important;
+}
+
+.admin-footer-text {
+    color: var(--admin-muted);
+    font-size: 12px;
+}
+
+.admin-footer-text a {
+    color: var(--admin-primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.admin-footer-text a:hover {
+    color: var(--admin-gold);
+}
+
+.footer-separator {
+    margin: 0 7px;
+    color: var(--admin-gold);
+}
+
+.footer-heart {
+    color: var(--admin-primary);
+    vertical-align: middle;
+}
+
+.admin-footer-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--admin-primary);
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.admin-footer-home:hover {
+    color: var(--admin-gold);
+}
+
+
+/* ---------- 16. Scrollbar ---------- */
+
+.pc-sidebar .navbar-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.pc-sidebar .navbar-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.pc-sidebar .navbar-content::-webkit-scrollbar-thumb {
+    background: rgba(231, 212, 160, 0.35);
+    border-radius: 10px;
+}
+
+.pc-sidebar .navbar-content::-webkit-scrollbar-thumb:hover {
+    background: var(--admin-gold);
+}
+
+
+/* ---------- 17. Responsive Design ---------- */
+
+@media (max-width: 991.98px) {
+    .pc-header .header-wrapper {
+        min-height: 66px;
+    }
+
+    .pc-container .pc-content {
+        padding: 20px 16px;
+    }
+
+    .pc-header .header-search {
+        width: 230px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .pc-container .pc-content {
+        padding: 16px 12px;
+    }
+
+    .admin-profile-trigger {
+        gap: 7px;
+        padding: 5px !important;
+        border: none;
+        background: transparent !important;
+    }
+
+    .admin-profile-label,
+    .profile-chevron {
+        display: none;
+    }
+
+    .admin-avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+    .pc-content .card-header {
+        padding: 15px;
+    }
+
+    .pc-content .card-body {
+        padding: 15px;
+    }
+
+    .pc-content .table thead th,
+    .pc-content .table tbody td {
+        padding: 11px 12px;
+    }
+
+    .admin-footer-text {
+        line-height: 1.8;
+    }
+}
+
+
+/* ---------- 18. Accessibility ---------- */
+
+.pc-sidebar .pc-link:focus-visible,
+.pc-header a:focus-visible,
+.pc-content button:focus-visible,
+.pc-content a:focus-visible {
+    outline: 2px solid var(--admin-gold);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

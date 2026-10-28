@@ -7,9 +7,15 @@ from studentapp.models import Response
 # Create your views here.
 @cache_control(no_cache=True,must_revalidate=True,no_store=True)
 def adminhome(req):
+    context = {
+        'total_students': StudentInfo.objects.count(),
+        'total_materials': Material.objects.count(),
+        'total_enquiries': Enquiry.objects.count(),
+        'total_complaints': Response.objects.filter(responsetype="comp").count(),
+    }
     try:
         if req.session['adminid']!=None:
-            return render(req,"adminhome.html")
+            return render(req,"adminhome.html",context)
     except KeyError:
         messages.success(req,"Please login first!!")
         return redirect('login')

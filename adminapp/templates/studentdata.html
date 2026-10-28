@@ -1,39 +1,144 @@
 {% extends 'adminbase.html' %}
 {% load static %}
-{% block admin %}
-<div class="container">
-    <div class="row bg-primary text-light p-3" style="border-radius: 20px">
-        <div class="col-sm-12">
-            <h3 class="text-light mb-0">All Students Data</h3>
 
+{% block admin %}
+
+<link rel="stylesheet" href="{% static 'admin/assets/css/view-students.css' %}">
+
+<div class="student-page">
+
+    <!-- Page Header -->
+    <div class="student-page-header">
+        <div class="student-header-content">
+            <span class="student-eyebrow">
+                <i class="ti ti-school"></i>
+                STUDENT MANAGEMENT
+            </span>
+
+            <h2>All Students Data</h2>
+
+            <p>View and manage student information registered in the portal.</p>
+        </div>
+
+        <div class="student-header-icon">
+            <i class="ti ti-users"></i>
         </div>
     </div>
-    <div class="row mt-4">
-        <div class="col-sm-12">
-            <table class="table table-bordered">
-                <tr>
-                    <th>Roll No.</th>
-                    <th>Name</th>
-                    <th>Father's name</th>
-                    <th>Mother's name</th>
-                    <th>View More</th>
-                    
-                </tr>
-                {% for stu in students %}
-                <tr>
-                    <td>{{stu.rollno}}</td>
-                    <td>{{stu.name}}</td>
-                    <td>{{stu.fname}}</td>
-                    <td>{{stu.mname}}</td>
-                    <td>
-                        <a href="{% url 'viewmore' rollno=stu.rollno %}">
-                            <button type="button" class="btn btn-sm btn-success "> View More</button>
-                        </a>
-                    </td>
-                </tr>
-                {% endfor %}
+
+    <!-- Student Summary -->
+    <div class="student-summary">
+        <div class="summary-icon">
+            <i class="ti ti-users"></i>
+        </div>
+
+        <div>
+            <span class="summary-label">Registered Students</span>
+            <h3>{{ students|length }}</h3>
+            <p>Student records available in the portal</p>
+        </div>
+    </div>
+
+    <!-- Student Table Card -->
+    <div class="student-table-card">
+
+        <div class="student-table-header">
+            <div>
+                <h4>Student Directory</h4>
+                <p>Student personal and academic information</p>
+            </div>
+
+            <span class="student-record-badge">
+                <i class="ti ti-database"></i>
+                {{ students|length }} Records
+            </span>
+        </div>
+
+        <!-- Table -->
+        <div class="student-table-wrapper">
+            <table class="student-table">
+
+                <thead>
+                    <tr>
+                        <th>Roll No.</th>
+                        <th>Student Name</th>
+                        <th>Father's Name</th>
+                        <th>Mother's Name</th>
+                        <th class="action-heading">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for stu in students %}
+                    <tr>
+                        <td>
+                            <span class="student-roll">
+                                {{ stu.rollno }}
+                            </span>
+                        </td>
+
+                        <td>
+                            <div class="student-name-cell">
+                                <div class="student-avatar">
+                                    <i class="ti ti-user"></i>
+                                </div>
+
+                                <span class="student-name">
+                                    {{ stu.name }}
+                                </span>
+                            </div>
+                        </td>
+
+                        <td>{{ stu.fname }}</td>
+
+                        <td>{{ stu.mname }}</td>
+
+                        <td class="action-cell">
+                            <a href="{% url 'viewmore' rollno=stu.rollno %}"
+                               class="view-student-btn">
+                                <i class="ti ti-eye"></i>
+                                <span>View Details</span>
+                                <i class="ti ti-arrow-up-right"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    {% empty %}
+                    <tr>
+                        <td colspan="5">
+                            <div class="student-empty-state">
+                                <div class="empty-icon">
+                                    <i class="ti ti-users"></i>
+                                </div>
+
+                                <h4>No Students Found</h4>
+
+                                <p>
+                                    There are currently no student records
+                                    available to display.
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
             </table>
         </div>
+
+        <div class="student-table-footer">
+            <span>
+                <i class="ti ti-info-circle"></i>
+                Showing registered student records
+            </span>
+
+            <span class="footer-status">
+                <span class="status-dot"></span>
+                Portal Records
+            </span>
+        </div>
+
     </div>
+
 </div>
+
 {% endblock %}

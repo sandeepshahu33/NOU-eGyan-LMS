@@ -1,76 +1,165 @@
-{% extends 'adminbase.html' %} 
-{% load static %} 
+
+{% extends 'adminbase.html' %}
+{% load static %}
+
 {% block admin %}
-<div class="container">
-    <div class="row bg-primary text-light p-3" style="border-radius: 20px">
-        <div class="col-sm-12">
-            <h3 class="text-light mb-0 text-center pt-2">Student Information</h3>
-            <p></p>
+
+<link rel="stylesheet" href="{% static 'admin/assets/css/student-information.css' %}">
+
+<div class="student-info-page">
+
+    <!-- Page Header -->
+    <div class="student-info-header">
+        <div>
+            <span class="student-info-eyebrow">
+                STUDENT MANAGEMENT
+            </span>
+            <h2>Student Information</h2>
+            <p>Complete student profile and academic details</p>
         </div>
-    </div>  
-    <div class="row mt-4">
-        <div class="col-sm-12">
-            <table class="table table-bordered" style="margin: auto;width: 60%;">
-                <tr>
-                    <th>Roll No</th>
-                    <td>{{si.rollno}}</td>
-                   
-                </tr>
-                <tr>
-                    <th>Student Name</th>
-                    <td>{{si.name}}</td>
-                </tr>
-                <tr>
-                    <th>Father's Name</th>
-                    <td>{{si.fname}}</td>
-                </tr>
-                <tr>
-                    <th>Mother's Name</th>
-                    <td>{{si.mname}}</td>
-                </tr>
-                <tr>
-                    <th>Gender</th>
-                    <td>{{si.gender}}</td>
-                </tr>
-                <tr>
-                    <th>Address</th>
-                    <td>{{si.address}}</td>
-                </tr>
-                <tr>
-                    <th>Program</th>
-                    <td>{{si.program}}</td>
-                </tr>
-                <tr>
-                    <th>Branch</th>
-                    <td>{{si.branch}}</td>
-                </tr>
-                <tr>
-                    <th>Year</th>
-                    <td>{{si.year}}</td>
-                </tr>
-                <tr>
-                    <th>Contact Number</th>
-                    <td>{{si.contactno}}</td>
-                </tr>
-                <tr>
-                    <th>Email Address</th>
-                    <td>{{si.emailaddress}}</td>
-                </tr>
-                <tr>
-                    <th>Registration Date</th>
-                    <td>{{si.regdate}}</td>
-                </tr>
-                <tr>
-                    <th></th>
-                    <td>
-                        <a href="{% url 'studentdata' %}">
-                            <button type="button" class="btn btn-success btn-success"> 🔙 Back</button>
-                        </a>
-                    </td>
-                </tr>
-                
-            </table>
+
+        <a href="{% url 'studentdata' %}" class="back-students-btn">
+            <i class="ti ti-arrow-left"></i>
+            Back to Students
+        </a>
+    </div>
+
+    <!-- Student Profile -->
+    <div class="student-profile-strip">
+        <div class="student-avatar">
+            <i class="ti ti-user"></i>
+        </div>
+
+        <div class="student-profile-text">
+            <h3>{{ si.name|default:"Student Name" }}</h3>
+            <p>
+                <i class="ti ti-id"></i>
+                Roll Number: {{ si.rollno|default:"Not provided" }}
+            </p>
+        </div>
+
+        <div class="student-profile-badge">
+            <i class="ti ti-school"></i>
+            Student Profile
         </div>
     </div>
+
+    <!-- All Student Details in One Table -->
+    <div class="student-table-card">
+
+        <div class="student-table-heading">
+            <div>
+                <h4>Complete Information</h4>
+                <p>Personal, academic and contact details</p>
+            </div>
+            <span class="details-count">Student Record</span>
+        </div>
+
+        <div class="student-table-responsive">
+            <table class="student-details-table">
+                <thead>
+                    <tr>
+                        <th class="number-column">#</th>
+                        <th>Field</th>
+                        <th>Student Details</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td><i class="ti ti-id"></i> Roll Number</td>
+                        <td>{{ si.rollno|default:"Not provided" }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>02</td>
+                        <td><i class="ti ti-user"></i> Student Name</td>
+                        <td>{{ si.name|default:"Not provided" }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>03</td>
+                        <td><i class="ti ti-user"></i> Father's Name</td>
+                        <td>{{ si.fname|default:"Not provided" }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>04</td>
+                        <td><i class="ti ti-user"></i> Mother's Name</td>
+                        <td>{{ si.mname|default:"Not provided" }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>05</td>
+                        <td>
+    <span style="font-size: 18px;">⚥</span>
+    Gender
+</td>
+                        <td>{{ si.gender|default:"Not provided" }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>06</td>
+                        <td><i class="ti ti-map-pin"></i> Residential Address</td>
+                        <td>{{ si.address|default:"Not provided" }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>07</td>
+                        <td><i class="ti ti-book"></i> Program</td>
+                        <td>{{ si.program|default:"Not provided" }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>08</td>
+                        <td><i class="ti ti-building"></i> Branch</td>
+                        <td>{{ si.branch|default:"Not provided" }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>09</td>
+                        <td><i class="ti ti-calendar"></i> Academic Year</td>
+                        <td>{{ si.year|default:"Not provided" }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>10</td>
+                        <td><i class="ti ti-calendar"></i> Registration Date</td>
+                        <td>{{ si.regdate|default:"Not provided" }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>11</td>
+                        <td><i class="ti ti-phone"></i> Contact Number</td>
+                        <td>{{ si.contactno|default:"Not provided" }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>12</td>
+                        <td><i class="ti ti-mail"></i> Email Address</td>
+                        <td class="student-email">
+                            {{ si.emailaddress|default:"Not provided" }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="student-table-footer">
+            <span>
+                <i class="ti ti-shield-check"></i>
+                Student Information Portal
+            </span>
+
+            <a href="{% url 'studentdata' %}" class="table-back-link">
+                <i class="ti ti-arrow-left"></i>
+                Back to Student List
+            </a>
+        </div>
+
+    </div>
+
 </div>
+
 {% endblock %}
