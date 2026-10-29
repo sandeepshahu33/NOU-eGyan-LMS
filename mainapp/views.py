@@ -4,12 +4,7 @@ from django.contrib import messages
 from .models import Enquiry,StudentInfo,LoginInfo
 
 # Create your views here.
-
-# def index(req):
-#     return render(req,'index.html')
-
 def index(req):
-    # return render(req,'home.html')
     return render(req,'index.html')
     
 
@@ -21,10 +16,6 @@ def services(req):
 
 def contactus1(req):
     return render(req,"contactus1.html")
-# def login1(req):
-#     return render(req,"login1.html")
-# def registration(req):
-#     return render(req,"registration.html")
 def enquery(req):
     return render(req,"enquery.html")
 
@@ -81,7 +72,6 @@ def login(req):
                 return redirect('studenthome')
             elif obj.usertype=='admin':
                 req.session["adminid"]=username
-                # messages.success(req,"Welcome Admin")
                 return redirect("adminhome")
             return redirect("login")
         except Exception :
